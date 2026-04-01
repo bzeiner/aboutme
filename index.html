@@ -8,7 +8,6 @@
 <style>
   :root {
     --ink:       #06111F;
-    --navy:      #0F2236;
     --navy-mid:  #1B3A5C;
     --gold:      #C9A84C;
     --gold-soft: rgba(201,168,76,0.10);
@@ -43,13 +42,13 @@
     position:fixed; inset:0; z-index:0; pointer-events:none;
     background:
       radial-gradient(ellipse 80% 60% at 15% 10%, rgba(27,58,92,0.5) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 40% at 90% 85%, rgba(201,168,76,0.06) 0%, transparent 55%);
+      radial-gradient(ellipse 50% 40% at 90% 85%, rgba(201,168,76,0.05) 0%, transparent 55%);
   }
 
   /* ── TOPBAR ── */
   .topbar {
     position:fixed; top:0; left:0; right:0; z-index:50;
-    padding:14px 28px;
+    padding:14px 36px;
     display:flex; align-items:center; justify-content:flex-end;
     background:rgba(6,17,31,0.7);
     backdrop-filter:blur(20px);
@@ -62,23 +61,23 @@
     to   { opacity:1; transform:translateY(0); }
   }
 
-  .topbar-wa {
-    display:flex; align-items:center; gap:8px;
-    background:rgba(37,211,102,0.08);
-    border:1px solid rgba(37,211,102,0.2);
+  .topbar-contact {
+    display:flex; align-items:center;
+    background:rgba(245,240,232,0.05);
+    border:1px solid rgba(245,240,232,0.1);
     border-radius:100px;
-    padding:7px 16px;
-    text-decoration:none; color:#4ade80;
+    padding:7px 18px;
+    text-decoration:none; color:var(--fog);
     font-size:12px; font-weight:400;
-    letter-spacing:0.02em; transition:all 0.2s;
+    letter-spacing:0.06em;
+    transition:all 0.2s;
   }
 
-  .topbar-wa:hover {
-    background:rgba(37,211,102,0.15);
-    border-color:rgba(37,211,102,0.38);
+  .topbar-contact:hover {
+    background:rgba(245,240,232,0.08);
+    border-color:rgba(245,240,232,0.18);
+    color:var(--mist);
   }
-
-  .topbar-wa svg { width:13px; height:13px; flex-shrink:0; }
 
   /* ── HERO ── */
   .hero {
@@ -134,25 +133,43 @@
     animation:fadeUp 0.5s 0.32s ease both;
   }
 
-  .hero-bio {
+  .hero-signature {
     margin-top:32px;
-    font-size:clamp(14px, 1.8vw, 16px);
-    font-weight:300; color:var(--mist);
-    max-width:520px; line-height:1.9;
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:clamp(18px, 3vw, 26px);
+    letter-spacing:-0.02em; line-height:1.3;
+    color:var(--cream); max-width:540px;
     animation:fadeUp 0.5s 0.38s ease both;
   }
 
-  .hero-bio p + p { margin-top:18px; }
+  .hero-bio {
+    margin-top:32px;
+    font-size:clamp(14px, 1.8vw, 15px);
+    font-weight:300; color:var(--mist);
+    max-width:520px; line-height:1.95;
+    animation:fadeUp 0.5s 0.44s ease both;
+  }
+
+  .hero-bio p + p { margin-top:16px; }
+
+  .hero-disclaimer {
+    margin-top:28px;
+    font-size:12px; font-weight:300;
+    color:rgba(245,240,232,0.22);
+    font-style:italic; letter-spacing:0.02em;
+    animation:fadeUp 0.5s 0.5s ease both;
+  }
 
   .affinity-row {
     display:flex; flex-wrap:wrap; gap:8px;
-    margin-top:38px;
-    animation:fadeUp 0.5s 0.46s ease both;
+    margin-top:36px;
+    animation:fadeUp 0.5s 0.54s ease both;
   }
 
   .affinity {
     background:var(--cream-dim);
-    border:1px solid rgba(245,240,232,0.08);
+    border:1px solid rgba(245,240,232,0.07);
     border-radius:100px;
     padding:5px 14px;
     font-size:11px; font-weight:300;
@@ -166,19 +183,9 @@
     color:var(--cream);
   }
 
-  .invite {
-    margin-top:44px;
-    font-family:'Fraunces', serif;
-    font-style:italic; font-weight:300;
-    font-size:clamp(14px, 2vw, 17px);
-    color:rgba(201,168,76,0.55);
-    letter-spacing:-0.01em;
-    animation:fadeUp 0.5s 0.52s ease both;
-  }
-
   .scroll-nudge {
     margin-top:60px;
-    animation:fadeUp 0.5s 0.58s ease both;
+    animation:fadeUp 0.5s 0.6s ease both;
     display:flex; align-items:center; gap:14px;
     cursor:pointer; user-select:none;
   }
@@ -244,7 +251,7 @@
 
   .faq-q {
     width:100%; background:none; border:none;
-    padding:18px 0;
+    padding:20px 0;
     display:flex; align-items:center; justify-content:space-between; gap:16px;
     font-family:'DM Sans', sans-serif;
     font-size:15px; font-weight:400;
@@ -270,45 +277,65 @@
   .faq-a {
     max-height:0; overflow:hidden; padding:0;
     font-size:14px; font-weight:300;
-    color:var(--fog); line-height:1.85;
+    color:var(--fog); line-height:1.9;
     transition:max-height 0.35s ease, padding 0.35s ease;
   }
 
-  .faq-item.open .faq-a { max-height:300px; padding:0 0 22px; }
+  .faq-item.open .faq-a { max-height:400px; padding:0 0 24px; }
+
+  /* ── CTA ── */
+  .cta-section {
+    position:relative; z-index:1;
+    max-width:720px; margin:0 auto;
+    padding:0 36px 80px;
+  }
+
+  .cta-block {
+    border-top:1px solid rgba(201,168,76,0.12);
+    padding-top:40px;
+  }
+
+  .cta-text {
+    font-family:'Fraunces', serif;
+    font-style:italic; font-weight:300;
+    font-size:clamp(16px, 2.5vw, 22px);
+    color:rgba(245,240,232,0.5);
+    line-height:1.55; letter-spacing:-0.01em;
+    max-width:480px;
+  }
 
   /* ── CONTACT ── */
   .contact-stack {
     display:flex; flex-direction:column; gap:10px;
-    margin-top:32px;
+    margin-top:36px;
   }
 
   .wa-card {
     display:flex; align-items:center; gap:16px;
-    background:rgba(37,211,102,0.05);
-    border:1px solid rgba(37,211,102,0.16);
+    background:rgba(245,240,232,0.03);
+    border:1px solid rgba(245,240,232,0.08);
     border-radius:14px; padding:20px 22px;
     text-decoration:none; color:var(--cream);
     transition:all 0.2s;
   }
 
   .wa-card:hover {
-    background:rgba(37,211,102,0.09);
-    border-color:rgba(37,211,102,0.32);
-    transform:translateY(-2px);
+    background:rgba(245,240,232,0.06);
+    border-color:rgba(245,240,232,0.14);
+    transform:translateY(-1px);
   }
 
   .wa-icon-wrap {
-    width:46px; height:46px; flex-shrink:0;
-    background:rgba(37,211,102,0.1);
-    border-radius:12px;
+    width:42px; height:42px; flex-shrink:0;
+    background:rgba(37,211,102,0.08);
+    border-radius:10px;
     display:flex; align-items:center; justify-content:center;
   }
 
-  .wa-icon-wrap svg { width:22px; height:22px; }
+  .wa-icon-wrap svg { width:20px; height:20px; }
 
-  .wa-label { font-size:10px; font-weight:400; color:#4ade80; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:3px; }
-  .wa-val   { font-size:16px; font-weight:400; color:var(--cream); }
-  .wa-hint  { font-size:12px; font-weight:300; color:var(--fog); margin-top:2px; }
+  .wa-label { font-size:10px; font-weight:400; color:var(--fog); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px; }
+  .wa-val   { font-size:15px; font-weight:400; color:var(--mist); }
 
   .contact-row {
     display:grid; grid-template-columns:1fr 1fr; gap:10px;
@@ -319,38 +346,37 @@
   .c-card {
     display:flex; align-items:center; gap:12px;
     background:var(--cream-dim);
-    border:1px solid rgba(245,240,232,0.07);
+    border:1px solid rgba(245,240,232,0.06);
     border-radius:12px; padding:14px 16px;
     text-decoration:none; color:var(--cream);
     transition:all 0.2s;
   }
 
   .c-card:hover {
-    background:rgba(27,58,92,0.3);
-    border-color:var(--gold-line);
+    background:rgba(27,58,92,0.25);
+    border-color:rgba(245,240,232,0.1);
     transform:translateY(-1px);
   }
 
   .c-icon {
-    width:34px; height:34px; flex-shrink:0;
-    background:var(--gold-soft); border-radius:8px;
+    width:32px; height:32px; flex-shrink:0;
+    background:var(--gold-soft); border-radius:7px;
     display:flex; align-items:center; justify-content:center;
   }
 
-  .c-icon svg { width:14px; height:14px; }
+  .c-icon svg { width:13px; height:13px; }
   .c-lbl { font-size:10px; font-weight:400; color:var(--fog); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:2px; }
-  .c-val { font-size:13px; font-weight:400; color:var(--mist); }
+  .c-val { font-size:13px; font-weight:300; color:var(--mist); }
 
-  /* ── vCARD ── */
   .vcard-btn {
     display:flex; align-items:center; justify-content:center; gap:10px;
-    margin-top:14px; padding:14px 20px;
+    margin-top:14px; padding:13px 20px;
     background:var(--cream-dim);
-    border:1px solid rgba(245,240,232,0.08);
+    border:1px solid rgba(245,240,232,0.07);
     border-radius:12px;
     text-decoration:none; color:var(--fog);
-    font-size:13px; font-weight:300;
-    letter-spacing:0.03em; transition:all 0.2s; cursor:pointer;
+    font-size:12px; font-weight:300;
+    letter-spacing:0.05em; transition:all 0.2s; cursor:pointer;
   }
 
   .vcard-btn:hover {
@@ -359,7 +385,7 @@
     color:var(--cream);
   }
 
-  .vcard-btn svg { width:15px; height:15px; color:var(--gold); flex-shrink:0; }
+  .vcard-btn svg { width:14px; height:14px; color:var(--gold); flex-shrink:0; }
 
   /* ── FOOTER ── */
   .footer {
@@ -372,14 +398,14 @@
 
   .footer-left {
     font-size:11px; font-weight:300;
-    color:rgba(245,240,232,0.16); letter-spacing:0.06em;
+    color:rgba(245,240,232,0.14); letter-spacing:0.06em;
   }
 
   .footer-right { display:flex; gap:18px; }
 
   .footer-right a {
     font-size:11px; font-weight:300;
-    color:rgba(245,240,232,0.2);
+    color:rgba(245,240,232,0.18);
     text-decoration:none; letter-spacing:0.04em;
     transition:color 0.18s;
   }
@@ -393,10 +419,7 @@
 
 <!-- TOPBAR -->
 <nav class="topbar">
-  <a href="https://wa.me/4915756647548" target="_blank" class="topbar-wa">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    Schreib mir
-  </a>
+  <a href="#kontakt" class="topbar-contact">Kontakt</a>
 </nav>
 
 <!-- HERO -->
@@ -411,18 +434,23 @@
 
   <div class="hero-divider"></div>
 
+  <p class="hero-signature">Die meisten Probleme sind keine technischen – sie zeigen sich nur dort.</p>
+
   <div class="hero-bio">
-    <p>Ich habe früh gelernt: Technologie ist kein Ersatz für Klarheit. Sie verstärkt, was da ist – gute Prozesse genauso wie schlechte.</p>
-    <p>Mein Einstieg war an der Werkzeugmaschine. Später kamen berufsbegleitend Maschinenbau und Wirtschaftsingenieurwesen dazu. So ist aus praktischer Erfahrung ein klarer Fokus entstanden: Prozesse so gestalten, dass sie nicht nur auf dem Papier funktionieren, sondern im echten Betrieb.</p>
-    <p>KI sehe ich dabei nicht als Selbstzweck, sondern als Hebel. Denn neue Technologie löst keine unklaren Prozesse. Sie macht sie nur schneller sichtbar.</p>
+    <p>Technologie ist kein Ersatz für Klarheit. Sie verstärkt, was da ist – gute Prozesse genauso wie schlechte.</p>
+    <p>Genau das sehe ich immer wieder im Alltag vieler Betriebe – oft dort, wo es eigentlich längst laufen sollte.</p>
+    <p>Mich interessiert vor allem, warum Dinge im Alltag anders laufen als gedacht – selbst wenn Systeme und Konzepte eigentlich stimmen.</p>
+    <p>Mein Einstieg war an der Werkzeugmaschine. Später kamen berufsbegleitend Maschinenbau und Wirtschaftsingenieurwesen dazu. So ist aus praktischer Erfahrung ein klarer Fokus entstanden: Prozesse so zu verstehen, wie sie wirklich gelebt werden – nicht nur, wie sie geplant sind.</p>
+    <p>Heute verbinde ich genau diese Perspektiven: Praxis, Technik und Struktur – mit dem Blick darauf, was im Betrieb tatsächlich trägt.</p>
+    <p>KI sehe ich dabei nicht als Selbstzweck, sondern als Hebel. Sie macht sichtbar, was vorher schon da war – nur schneller.</p>
   </div>
+
+  <p class="hero-disclaimer">Ich teile hier ausschließlich persönliche Gedanken und Beobachtungen.</p>
 
   <div class="affinity-row">
     <span class="affinity">Familienvater</span>
     <span class="affinity">Ausdauersport</span>
   </div>
-
-  <p class="invite">Wer über Prozesse und KI reden will: ich freue mich über den Austausch.</p>
 
   <div class="scroll-nudge" onclick="document.querySelector('#fragen').scrollIntoView({behavior:'smooth'})">
     <div class="nudge-line"></div>
@@ -432,58 +460,65 @@
 
 <!-- FAQ -->
 <section class="section" id="fragen">
-  <div class="eyebrow">Über mich</div>
-  <h2 class="section-title">Was dich vielleicht<br><em>interessiert</em></h2>
+  <div class="eyebrow">Beobachtungen</div>
+  <h2 class="section-title">Was ich immer wieder<br><em>sehe</em></h2>
 
   <div class="faq-list">
 
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">
-        Was beschäftigt dich gerade?
+        Was wird bei Veränderungen in Betrieben am häufigsten unterschätzt?
         <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div>
       </button>
       <div class="faq-a">
-        Mich fasziniert, was hinter Dingen steckt – warum etwas funktioniert, und warum nicht. Gerade beschäftigt mich das Thema KI intensiv: wo sie echten Unterschied macht, und wo sie nur Erwartungen erzeugt.
+        Der Schritt davor. Nicht die Veränderung selbst – sondern das Verständnis dessen, was eigentlich gerade läuft. Meist liegt es nicht an fehlendem Willen oder falschen Tools. Es fehlt ein gemeinsames Bild davon, wie der Alltag wirklich funktioniert – bevor man ihn verändert.
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">
-        Was treibt dich an?
+        Was verändert KI tatsächlich – und was nicht?
         <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div>
       </button>
       <div class="faq-a">
-        Der Moment, in dem Komplexität Klarheit weicht – wenn etwas Schwieriges plötzlich einfach wird.
+        Interessant wird es dort, wo KI auf klare Abläufe trifft. Dann kann sie wirklich beschleunigen. Wo Unklarheit herrscht, macht sie diese sichtbarer – nicht kleiner. Was sich nicht verändert: die Notwendigkeit zu verstehen, warum etwas so läuft wie es läuft.
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">
-        Wie gehst du an Probleme heran?
+        Wie näherst du dich komplexen Situationen?
         <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div>
       </button>
       <div class="faq-a">
-        Ich bin ungeduldig mit Lösungen die nur an der Oberfläche kratzen. Wenn mich etwas beschäftigt, will ich zuerst verstehen was wirklich dahintersteckt – das gilt beim Laufen genauso wie beim Tüfteln an einem Problem.
+        Ich fange mit dem an, was ich beobachte – nicht mit dem, was erklärt wird. Beides ist wertvoll, aber es sind selten dasselbe. Komplexität löst sich oft nicht durch mehr Analyse, sondern durch das richtige Bild der Realität.
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">
-        Was machst du privat?
+        Wo scheitern Prozesse in der Praxis am häufigsten?
         <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div>
       </button>
       <div class="faq-a">
-        Ich bin Familienvater – das erdet. Und ich mache Ausdauersport, wann immer der Kopf mal wirklich frei werden soll. Privat bin ich technisch neugierig geblieben – ich probiere gerne aus wie Dinge funktionieren.
+        Meist nicht dort, wo man sucht. Auf dem Papier stimmt vieles – Verantwortlichkeiten, Systeme, Abläufe. Im Betrieb laufen dieselben Dinge dann trotzdem anders. Der Abstand zwischen geplantem und gelebtem Prozess ist fast immer größer als gedacht.
       </div>
     </div>
 
   </div>
 </section>
 
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-block">
+    <p class="cta-text">Wenn du gerade an einem Punkt bist, an dem Prozesse nicht mehr sauber greifen – ich tausche mich gern aus.</p>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="section" id="kontakt">
   <div class="eyebrow">Kontakt</div>
-  <h2 class="section-title">Kein Formular,<br><em>einfach direkt.</em></h2>
+  <h2 class="section-title">Direkt &<br><em>unkompliziert.</em></h2>
 
   <div class="contact-stack">
 
@@ -492,9 +527,8 @@
         <svg viewBox="0 0 24 24" fill="#25D166"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       </div>
       <div>
-        <div class="wa-label">WhatsApp · schnellster Weg</div>
+        <div class="wa-label">WhatsApp · direkt</div>
         <div class="wa-val">+49 157 566 47548</div>
-        <div class="wa-hint">Antworte meist innerhalb weniger Stunden</div>
       </div>
     </a>
 
