@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Björn Zeinert</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:       #06111F;
+    --navy:      #0F2236;
+    --navy-mid:  #1B3A5C;
+    --gold:      #C9A84C;
+    --gold-soft: rgba(201,168,76,0.10);
+    --gold-line: rgba(201,168,76,0.18);
+    --cream:     #F5F0E8;
+    --cream-dim: rgba(245,240,232,0.05);
+    --mist:      rgba(245,240,232,0.6);
+    --fog:       rgba(245,240,232,0.3);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::after {
+    content:'';
+    position:fixed; inset:0; z-index:100;
+    pointer-events:none; opacity:0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size:180px 180px;
+  }
+
+  .ambient {
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(ellipse 80% 60% at 15% 10%, rgba(27,58,92,0.5) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 90% 85%, rgba(201,168,76,0.06) 0%, transparent 55%);
+  }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    padding:14px 28px;
+    display:flex; align-items:center; justify-content:flex-end;
+    background:rgba(6,17,31,0.7);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(201,168,76,0.06);
+    animation:slideDown 0.4s ease both;
+  }
+
+  @keyframes slideDown {
+    from { opacity:0; transform:translateY(-8px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  .topbar-wa {
+    display:flex; align-items:center; gap:8px;
+    background:rgba(37,211,102,0.08);
+    border:1px solid rgba(37,211,102,0.2);
+    border-radius:100px;
+    padding:7px 16px;
+    text-decoration:none; color:#4ade80;
+    font-size:12px; font-weight:400;
+    letter-spacing:0.02em; transition:all 0.2s;
+  }
+
+  .topbar-wa:hover {
+    background:rgba(37,211,102,0.15);
+    border-color:rgba(37,211,102,0.38);
+  }
+
+  .topbar-wa svg { width:13px; height:13px; flex-shrink:0; }
+
+  /* ── HERO ── */
+  .hero {
+    position:relative; z-index:1;
+    min-height:100vh;
+    display:flex; flex-direction:column;
+    justify-content:center;
+    padding:110px 36px 80px;
+    max-width:720px; margin:0 auto;
+  }
+
+  .hero-kicker {
+    font-size:10px; font-weight:400;
+    letter-spacing:0.24em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:22px;
+    animation:fadeUp 0.5s 0.08s ease both;
+    display:flex; align-items:center; gap:12px;
+  }
+
+  .hero-kicker::before {
+    content:''; display:block;
+    width:30px; height:1px;
+    background:var(--gold); opacity:0.55; flex-shrink:0;
+  }
+
+  .hero-name {
+    font-family:'Fraunces', serif;
+    font-weight:900;
+    font-size:clamp(58px, 12vw, 104px);
+    letter-spacing:-0.04em; line-height:0.9;
+    color:var(--cream);
+    animation:fadeUp 0.5s 0.16s ease both;
+  }
+
+  .hero-name .outline {
+    color:transparent;
+    -webkit-text-stroke:1.5px var(--gold);
+  }
+
+  .hero-tagline {
+    font-family:'Fraunces', serif;
+    font-style:italic; font-weight:300;
+    font-size:clamp(15px, 2.8vw, 21px);
+    color:var(--fog); margin-top:22px;
+    letter-spacing:-0.01em;
+    animation:fadeUp 0.5s 0.26s ease both;
+  }
+
+  .hero-divider {
+    width:36px; height:1px;
+    background:linear-gradient(to right, var(--gold), transparent);
+    margin:38px 0 0;
+    animation:fadeUp 0.5s 0.32s ease both;
+  }
+
+  .hero-bio {
+    margin-top:32px;
+    font-size:clamp(14px, 1.8vw, 16px);
+    font-weight:300; color:var(--mist);
+    max-width:520px; line-height:1.9;
+    animation:fadeUp 0.5s 0.38s ease both;
+  }
+
+  .hero-bio p + p { margin-top:18px; }
+
+  .affinity-row {
+    display:flex; flex-wrap:wrap; gap:8px;
+    margin-top:38px;
+    animation:fadeUp 0.5s 0.46s ease both;
+  }
+
+  .affinity {
+    background:var(--cream-dim);
+    border:1px solid rgba(245,240,232,0.08);
+    border-radius:100px;
+    padding:5px 14px;
+    font-size:11px; font-weight:300;
+    color:var(--fog); letter-spacing:0.05em;
+    transition:all 0.2s;
+  }
+
+  .affinity:hover {
+    background:var(--gold-soft);
+    border-color:var(--gold-line);
+    color:var(--cream);
+  }
+
+  .invite {
+    margin-top:44px;
+    font-family:'Fraunces', serif;
+    font-style:italic; font-weight:300;
+    font-size:clamp(14px, 2vw, 17px);
+    color:rgba(201,168,76,0.55);
+    letter-spacing:-0.01em;
+    animation:fadeUp 0.5s 0.52s ease both;
+  }
+
+  .scroll-nudge {
+    margin-top:60px;
+    animation:fadeUp 0.5s 0.58s ease both;
+    display:flex; align-items:center; gap:14px;
+    cursor:pointer; user-select:none;
+  }
+
+  .nudge-line {
+    height:1px;
+    background:linear-gradient(to right, rgba(201,168,76,0.45), transparent);
+    animation:nudgePulse 2.6s infinite;
+  }
+
+  .nudge-text {
+    font-size:10px; letter-spacing:0.2em;
+    text-transform:uppercase; color:var(--fog);
+    white-space:nowrap;
+  }
+
+  @keyframes nudgePulse {
+    0%,100% { opacity:0.25; width:28px; }
+    50%      { opacity:0.8;  width:46px; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(18px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    position:relative; z-index:1;
+    max-width:720px; margin:0 auto;
+    padding:80px 36px;
+    border-top:1px solid rgba(245,240,232,0.04);
+  }
+
+  .eyebrow {
+    font-size:10px; font-weight:400;
+    letter-spacing:0.22em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:16px;
+    display:flex; align-items:center; gap:12px;
+  }
+
+  .eyebrow::before {
+    content:''; display:block;
+    width:20px; height:1px;
+    background:var(--gold); opacity:0.45; flex-shrink:0;
+  }
+
+  .section-title {
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:clamp(22px, 3.5vw, 32px);
+    letter-spacing:-0.025em; line-height:1.2;
+    color:var(--cream); margin-bottom:32px;
+  }
+
+  .section-title em {
+    font-style:italic; font-weight:300; color:var(--fog);
+  }
+
+  /* ── FAQ ── */
+  .faq-list { display:flex; flex-direction:column; }
+  .faq-item { border-bottom:1px solid rgba(245,240,232,0.05); }
+
+  .faq-q {
+    width:100%; background:none; border:none;
+    padding:18px 0;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    font-family:'DM Sans', sans-serif;
+    font-size:15px; font-weight:400;
+    color:var(--mist); cursor:pointer;
+    text-align:left; transition:color 0.2s;
+  }
+
+  .faq-q:hover { color:var(--cream); }
+  .faq-item.open .faq-q { color:var(--cream); }
+
+  .faq-icon {
+    width:20px; height:20px; flex-shrink:0;
+    border:1px solid rgba(201,168,76,0.22);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    transition:all 0.25s; color:var(--gold);
+  }
+
+  .faq-icon svg { width:8px; height:8px; transition:transform 0.25s; }
+  .faq-item.open .faq-icon { background:var(--gold-soft); border-color:var(--gold); }
+  .faq-item.open .faq-icon svg { transform:rotate(45deg); }
+
+  .faq-a {
+    max-height:0; overflow:hidden; padding:0;
+    font-size:14px; font-weight:300;
+    color:var(--fog); line-height:1.85;
+    transition:max-height 0.35s ease, padding 0.35s ease;
+  }
+
+  .faq-item.open .faq-a { max-height:300px; padding:0 0 22px; }
+
+  /* ── CONTACT ── */
+  .contact-stack {
+    display:flex; flex-direction:column; gap:10px;
+    margin-top:32px;
+  }
+
+  .wa-card {
+    display:flex; align-items:center; gap:16px;
+    background:rgba(37,211,102,0.05);
+    border:1px solid rgba(37,211,102,0.16);
+    border-radius:14px; padding:20px 22px;
+    text-decoration:none; color:var(--cream);
+    transition:all 0.2s;
+  }
+
+  .wa-card:hover {
+    background:rgba(37,211,102,0.09);
+    border-color:rgba(37,211,102,0.32);
+    transform:translateY(-2px);
+  }
+
+  .wa-icon-wrap {
+    width:46px; height:46px; flex-shrink:0;
+    background:rgba(37,211,102,0.1);
+    border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  .wa-icon-wrap svg { width:22px; height:22px; }
+
+  .wa-label { font-size:10px; font-weight:400; color:#4ade80; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:3px; }
+  .wa-val   { font-size:16px; font-weight:400; color:var(--cream); }
+  .wa-hint  { font-size:12px; font-weight:300; color:var(--fog); margin-top:2px; }
+
+  .contact-row {
+    display:grid; grid-template-columns:1fr 1fr; gap:10px;
+  }
+
+  @media (max-width:420px) { .contact-row { grid-template-columns:1fr; } }
+
+  .c-card {
+    display:flex; align-items:center; gap:12px;
+    background:var(--cream-dim);
+    border:1px solid rgba(245,240,232,0.07);
+    border-radius:12px; padding:14px 16px;
+    text-decoration:none; color:var(--cream);
+    transition:all 0.2s;
+  }
+
+  .c-card:hover {
+    background:rgba(27,58,92,0.3);
+    border-color:var(--gold-line);
+    transform:translateY(-1px);
+  }
+
+  .c-icon {
+    width:34px; height:34px; flex-shrink:0;
+    background:var(--gold-soft); border-radius:8px;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  .c-icon svg { width:14px; height:14px; }
+  .c-lbl { font-size:10px; font-weight:400; color:var(--fog); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:2px; }
+  .c-val { font-size:13px; font-weight:400; color:var(--mist); }
+
+  /* ── vCARD ── */
+  .vcard-btn {
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    margin-top:14px; padding:14px 20px;
+    background:var(--cream-dim);
+    border:1px solid rgba(245,240,232,0.08);
+    border-radius:12px;
+    text-decoration:none; color:var(--fog);
+    font-size:13px; font-weight:300;
+    letter-spacing:0.03em; transition:all 0.2s; cursor:pointer;
+  }
+
+  .vcard-btn:hover {
+    background:var(--gold-soft);
+    border-color:var(--gold-line);
+    color:var(--cream);
+  }
+
+  .vcard-btn svg { width:15px; height:15px; color:var(--gold); flex-shrink:0; }
+
+  /* ── FOOTER ── */
+  .footer {
+    position:relative; z-index:1;
+    max-width:720px; margin:0 auto;
+    padding:24px 36px 48px;
+    border-top:1px solid rgba(245,240,232,0.04);
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  }
+
+  .footer-left {
+    font-size:11px; font-weight:300;
+    color:rgba(245,240,232,0.16); letter-spacing:0.06em;
+  }
+
+  .footer-right { display:flex; gap:18px; }
+
+  .footer-right a {
+    font-size:11px; font-weight:300;
+    color:rgba(245,240,232,0.2);
+    text-decoration:none; letter-spacing:0.04em;
+    transition:color 0.18s;
+  }
+
+  .footer-right a:hover { color:var(--gold); }
+</style>
+</head>
+<body>
+
+<div class="ambient"></div>
+
+<!-- TOPBAR -->
+<nav class="topbar">
+  <a href="https://wa.me/4915756647548" target="_blank" class="topbar-wa">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Schreib mir
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-kicker">Bad Liebenzell · Nordschwarzwald</div>
+
+  <h1 class="hero-name">
+    Björn<br><span class="outline">Zeinert</span>
+  </h1>
+
+  <p class="hero-tagline">Prozesse. Menschen. Technologie.</p>
+
+  <div class="hero-divider"></div>
+
+  <div class="hero-bio">
+    <p>Ich habe früh gelernt: Technologie ist kein Ersatz für Klarheit. Sie verstärkt, was da ist – gute Prozesse genauso wie schlechte.</p>
+    <p>Mein Einstieg war an der Werkzeugmaschine. Später kamen berufsbegleitend Maschinenbau und Wirtschaftsingenieurwesen dazu. So ist aus praktischer Erfahrung ein klarer Fokus entstanden: Prozesse so gestalten, dass sie nicht nur auf dem Papier funktionieren, sondern im echten Betrieb.</p>
+    <p>KI sehe ich dabei nicht als Selbstzweck, sondern als Hebel. Denn neue Technologie löst keine unklaren Prozesse. Sie macht sie nur schneller sichtbar.</p>
+  </div>
+
+  <div class="affinity-row">
+    <span class="affinity">Familienvater</span>
+    <span class="affinity">Ausdauersport</span>
+  </div>
+
+  <p class="invite">Wer über Prozesse und KI reden will: ich freue mich über den Austausch.</p>
+
+  <div class="scroll-nudge" onclick="document.querySelector('#fragen').scrollIntoView({behavior:'smooth'})">
+    <div class="nudge-line"></div>
+    <span class="nudge-text">Mehr erfahren</span>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="fragen">
+  <div class="eyebrow">Über mich</div>
+  <h2 class="section-title">Was dich vielleicht<br><em>interessiert</em></h2>
+
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Was beschäftigt dich gerade?
+        <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div>
+      </button>
+      <div class="faq-a">
+        Mich fasziniert, was hinter Dingen steckt – warum etwas funktioniert, und warum nicht. Gerade beschäftigt mich das Thema KI intensiv: wo sie echten Unterschied macht, und wo sie nur Erwartungen erzeugt.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Was treibt dich an?
+        <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div>
+      </button>
+      <div class="faq-a">
+        Der Moment, in dem Komplexität Klarheit weicht – wenn etwas Schwieriges plötzlich einfach wird.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Wie gehst du an Probleme heran?
+        <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div>
+      </button>
+      <div class="faq-a">
+        Ich bin ungeduldig mit Lösungen die nur an der Oberfläche kratzen. Wenn mich etwas beschäftigt, will ich zuerst verstehen was wirklich dahintersteckt – das gilt beim Laufen genauso wie beim Tüfteln an einem Problem.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Was machst du privat?
+        <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div>
+      </button>
+      <div class="faq-a">
+        Ich bin Familienvater – das erdet. Und ich mache Ausdauersport, wann immer der Kopf mal wirklich frei werden soll. Privat bin ich technisch neugierig geblieben – ich probiere gerne aus wie Dinge funktionieren.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="kontakt">
+  <div class="eyebrow">Kontakt</div>
+  <h2 class="section-title">Kein Formular,<br><em>einfach direkt.</em></h2>
+
+  <div class="contact-stack">
+
+    <a href="https://wa.me/4915756647548" target="_blank" class="wa-card">
+      <div class="wa-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="#25D166"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </div>
+      <div>
+        <div class="wa-label">WhatsApp · schnellster Weg</div>
+        <div class="wa-val">+49 157 566 47548</div>
+        <div class="wa-hint">Antworte meist innerhalb weniger Stunden</div>
+      </div>
+    </a>
+
+    <div class="contact-row">
+
+      <a href="mailto:mail@bjoernzeinert.de" class="c-card">
+        <div class="c-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div>
+          <div class="c-lbl">E-Mail</div>
+          <div class="c-val">mail@bjoernzeinert.de</div>
+        </div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/bjoern-zeinert" target="_blank" class="c-card">
+        <div class="c-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </div>
+        <div>
+          <div class="c-lbl">LinkedIn</div>
+          <div class="c-val">bjoern-zeinert</div>
+        </div>
+      </a>
+
+      <a href="tel:+4915756647548" class="c-card">
+        <div class="c-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="c-lbl">Telefon</div>
+          <div class="c-val">+49 157 566 47548</div>
+        </div>
+      </a>
+
+    </div>
+
+    <a href="#" onclick="downloadVCard(); return false;" class="vcard-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+        <line x1="12" y1="14" x2="12" y2="20"/>
+        <polyline points="9 17 12 20 15 17"/>
+      </svg>
+      Kontakt speichern
+    </a>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-left">75378 Bad Liebenzell · Baden-Württemberg</div>
+  <div class="footer-right">
+    <a href="/impressum.html">Impressum</a>
+    <a href="/datenschutz.html">Datenschutz</a>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
+
+function downloadVCard() {
+  var vcard = [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'FN:Björn Zeinert',
+    'N:Zeinert;Björn;;;',
+    'TEL;TYPE=CELL:+4915756647548',
+    'EMAIL:mail@bjoernzeinert.de',
+    'URL:https://aboutme.bjoernzeinert.de',
+    'NOTE:Prozesse. Menschen. Technologie.',
+    'END:VCARD'
+  ].join('\r\n');
+
+  var blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+  var url  = URL.createObjectURL(blob);
+  var a    = document.createElement('a');
+  a.href     = url;
+  a.download = 'bjoern-zeinert.vcf';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>
