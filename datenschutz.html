@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutz · Björn Zeinert</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:   #06111F;
+    --gold:  #C9A84C;
+    --cream: #F5F0E8;
+    --mist:  rgba(245,240,232,0.6);
+    --fog:   rgba(245,240,232,0.3);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+  }
+
+  body::after {
+    content:'';
+    position:fixed; inset:0; z-index:100;
+    pointer-events:none; opacity:0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size:180px 180px;
+  }
+
+  .ambient {
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background: radial-gradient(ellipse 80% 60% at 15% 10%, rgba(27,58,92,0.5) 0%, transparent 60%);
+  }
+
+  .wrap {
+    position:relative; z-index:1;
+    max-width:620px; margin:0 auto;
+    padding: 72px 36px 80px;
+  }
+
+  .back {
+    display:inline-flex; align-items:center; gap:8px;
+    text-decoration:none; color:var(--fog);
+    font-size:11px; letter-spacing:0.16em;
+    text-transform:uppercase; margin-bottom:52px;
+    transition:color 0.2s;
+  }
+
+  .back:hover { color:var(--gold); }
+  .back svg { width:14px; height:14px; }
+
+  .page-title {
+    font-family:'Fraunces', serif;
+    font-weight:900;
+    font-size:clamp(36px, 8vw, 58px);
+    letter-spacing:-0.035em; line-height:0.92;
+    color:var(--cream); margin-bottom:52px;
+  }
+
+  .page-title .outline {
+    color:transparent;
+    -webkit-text-stroke:1.5px var(--gold);
+  }
+
+  .block {
+    border-top:1px solid rgba(245,240,232,0.06);
+    padding:28px 0;
+  }
+
+  .block:last-of-type {
+    border-bottom:1px solid rgba(245,240,232,0.06);
+  }
+
+  .block-label {
+    font-size:10px; font-weight:400;
+    letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:14px;
+    display:flex; align-items:center; gap:10px;
+  }
+
+  .block-label::before {
+    content:''; display:block;
+    width:16px; height:1px;
+    background:var(--gold); opacity:0.5; flex-shrink:0;
+  }
+
+  .block-content {
+    font-size:15px; font-weight:300;
+    color:var(--mist); line-height:1.85;
+  }
+
+  .block-content p + p { margin-top:14px; }
+
+  .block-content a {
+    color:var(--mist); text-decoration:none;
+    border-bottom:1px solid rgba(245,240,232,0.15);
+    transition:all 0.2s;
+  }
+
+  .block-content a:hover {
+    color:var(--gold);
+    border-color:rgba(201,168,76,0.4);
+  }
+
+  .block-content ul {
+    margin-top:12px; padding-left:20px;
+    display:flex; flex-direction:column; gap:8px;
+  }
+
+  .block-content li {
+    font-size:14px; color:var(--fog); line-height:1.75;
+  }
+
+  .caps {
+    font-size:13px;
+    color:var(--fog);
+    line-height:1.75;
+    letter-spacing:0.01em;
+  }
+
+  .source {
+    margin-top:40px;
+    font-size:12px; font-weight:300;
+    color:var(--fog); font-style:italic;
+  }
+
+  .source a {
+    color:var(--fog); text-decoration:none;
+    border-bottom:1px solid rgba(245,240,232,0.1);
+    transition:all 0.2s;
+  }
+
+  .source a:hover { color:var(--gold); }
+
+  .footer {
+    margin-top:52px; padding-top:24px;
+    border-top:1px solid rgba(245,240,232,0.04);
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  }
+
+  .footer-left {
+    font-size:11px; font-weight:300;
+    color:rgba(245,240,232,0.16); letter-spacing:0.06em;
+  }
+
+  .footer-right { display:flex; gap:18px; }
+
+  .footer-right a {
+    font-size:11px; font-weight:300;
+    color:rgba(245,240,232,0.2);
+    text-decoration:none; letter-spacing:0.04em;
+    transition:color 0.18s;
+  }
+
+  .footer-right a:hover { color:var(--gold); }
+</style>
+</head>
+<body>
+
+<div class="ambient"></div>
+
+<div class="wrap">
+
+  <a href="/" class="back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"/>
+      <polyline points="12 19 5 12 12 5"/>
+    </svg>
+    Zurück
+  </a>
+
+  <h1 class="page-title">Daten<span class="outline">schutz</span></h1>
+
+  <!-- 1 -->
+  <div class="block">
+    <div class="block-label">Datenschutz auf einen Blick</div>
+    <div class="block-content">
+      <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+      <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Die Kontaktdaten finden Sie im Abschnitt „Verantwortliche Stelle" weiter unten.</p>
+      <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten sowie das Recht auf Berichtigung oder Löschung dieser Daten. Bei Fragen zum Datenschutz können Sie sich jederzeit an uns wenden.</p>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="block">
+    <div class="block-label">Hosting · Hetzner</div>
+    <div class="block-content">
+      <p>Diese Website wird bei Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen gehostet.</p>
+      <p>Die Verwendung von Hetzner erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer zuverlässigen Darstellung der Website). Mit Hetzner besteht ein Vertrag über Auftragsverarbeitung (AVV).</p>
+      <p>Weitere Informationen: <a href="https://www.hetzner.com/de/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">Datenschutzerklärung Hetzner</a></p>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="block">
+    <div class="block-label">Verantwortliche Stelle</div>
+    <div class="block-content">
+      <p>
+        Björn Zeinert<br>
+        75378 Bad Liebenzell<br>
+        Baden-Württemberg
+      </p>
+      <p>
+        Telefon: +49 (0) 157 566 47548<br>
+        E-Mail: <a href="mailto:mail@bjoernzeinert.de">mail@bjoernzeinert.de</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="block">
+    <div class="block-label">Speicherdauer</div>
+    <div class="block-content">
+      <p>Soweit keine speziellere Speicherdauer genannt wurde, verbleiben personenbezogene Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Bei berechtigtem Löschersuchen oder Widerruf einer Einwilligung werden Daten gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="block">
+    <div class="block-label">Ihre Rechte</div>
+    <div class="block-content">
+      <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Datenübertragbarkeit. Außerdem steht Ihnen ein Beschwerderecht bei der zuständigen Datenschutz-Aufsichtsbehörde zu.</p>
+      <p>Für Baden-Württemberg: <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener noreferrer">Landesbeauftragter für Datenschutz BW</a></p>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="block">
+    <div class="block-label">Kontaktaufnahme per E-Mail oder Telefon</div>
+    <div class="block-content">
+      <p>Wenn Sie uns per E-Mail oder Telefon kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten zum Zwecke der Bearbeitung gespeichert. Diese Daten werden nicht ohne Ihre Einwilligung weitergegeben.</p>
+      <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der effektiven Bearbeitung von Anfragen) bzw. Art. 6 Abs. 1 lit. b DSGVO, sofern die Anfrage mit einem Vertrag zusammenhängt.</p>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="block">
+    <div class="block-label">Widerspruchsrecht</div>
+    <div class="block-content">
+      <p class="caps">WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GRÜNDEN IHRER BESONDEREN SITUATION WIDERSPRUCH GEGEN DIE VERARBEITUNG EINZULEGEN. NACH WIDERSPRUCH WERDEN DIE BETROFFENEN DATEN NICHT MEHR VERARBEITET, ES SEI DENN, WIR KÖNNEN ZWINGENDE SCHUTZWÜRDIGE GRÜNDE NACHWEISEN, DIE IHRE INTERESSEN ÜBERWIEGEN.</p>
+    </div>
+  </div>
+
+  <div class="source">Quelle: <a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer">e-recht24.de</a></div>
+
+  <div class="footer">
+    <div class="footer-left">75378 Bad Liebenzell · Baden-Württemberg</div>
+    <div class="footer-right">
+      <a href="/impressum">Impressum</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
