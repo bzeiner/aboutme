@@ -1,632 +1,316 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Björn Zeinert</title>
-<link rel="stylesheet" href="/fonts/fonts.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Björn Zeinert · Prozesse, Menschen, Technologie · Bad Liebenzell</title>
+<meta name="description" content="Björn Zeinert aus Bad Liebenzell: Prozesse, Menschen, Technologie. Inhaber von ZYRELO, Beratung für KI-Sichtbarkeit (GEO) für kleine und mittlere Unternehmen im Raum Pforzheim und Nordschwarzwald.">
+<link rel="canonical" href="https://about.bjoernzeinert.de/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Björn Zeinert · Prozesse, Menschen, Technologie">
+<meta property="og:description" content="Persönliche Seite von Björn Zeinert, Bad Liebenzell. Inhaber von ZYRELO, Beratung für KI-Sichtbarkeit (GEO).">
+<meta property="og:url" content="https://about.bjoernzeinert.de/">
+<meta property="og:image" content="https://about.bjoernzeinert.de/portrait.jpg">
+<meta name="theme-color" content="#F6F3EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1626" media="(prefers-color-scheme: dark)">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://about.bjoernzeinert.de/#person",
+  "name": "Björn Zeinert",
+  "url": "https://about.bjoernzeinert.de/",
+  "image": "https://about.bjoernzeinert.de/portrait.jpg",
+  "jobTitle": "Inhaber ZYRELO",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bad Liebenzell",
+    "postalCode": "75378",
+    "addressRegion": "Baden-Württemberg",
+    "addressCountry": "DE"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "ZYRELO",
+    "url": "https://zyrelo.ai",
+    "description": "ZYRELO misst, ob und wie Unternehmen in den Antworten von KI-Systemen wie ChatGPT, Perplexity und Gemini genannt werden, und leitet daraus konkrete Maßnahmen ab."
+  },
+  "knowsAbout": ["Prozessmanagement", "KI-Sichtbarkeit", "Generative Engine Optimization", "Wirtschaftsingenieurwesen"],
+  "sameAs": [
+    "https://www.linkedin.com/in/bjoern-zeinert",
+    "https://zyrelo.ai"
+  ]
+}
+</script>
 <style>
-  :root {
-    --ink:       #06111F;
-    --navy-mid:  #1B3A5C;
-    --gold:      #C9A84C;
-    --gold-soft: rgba(201,168,76,0.10);
-    --gold-line: rgba(201,168,76,0.18);
-    --cream:     #F5F0E8;
-    --cream-dim: rgba(245,240,232,0.05);
-    --mist:      rgba(245,240,232,0.6);
-    --fog:       rgba(245,240,232,0.3);
+:root{
+  --paper:#F6F3EE; --paper-2:#EFEAE2; --ink:#0F1E35; --muted:#56606E; --line:#E0DAD0;
+  --accent:#8C6D1F; --accent-ink:#FFFFFF; --accent-soft:#EFE6D0;
+  --panel:#0F1E35; --panel-ink:#F3EFE8; --panel-muted:#B6BECB; --panel-accent:#C5A24A;
+  --serif:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --radius:14px; --wrap:1080px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --paper:#0B1626; --paper-2:#12213A; --ink:#ECE8E1; --muted:#A7B0BE; --line:#22324C;
+    --accent:#C5A24A; --accent-ink:#0F1E35; --accent-soft:#1F2B3F;
+    --panel:#12213A; --panel-ink:#ECE8E1; --panel-muted:#A7B0BE; --panel-accent:#C5A24A;
   }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;background:var(--ink);color:var(--paper);padding:8px 12px;border-radius:8px;z-index:10}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
 
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
+/* Header */
+header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--serif);font-size:19px;text-decoration:none;letter-spacing:.2px}
+nav a{font-size:15px;color:var(--muted);text-decoration:none;margin-left:22px}
+nav a:hover{color:var(--ink)}
 
-  body {
-    background: var(--ink);
-    color: var(--cream);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+/* Hero */
+.hero{padding-top:88px;padding-bottom:64px}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 18px}
+.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:end}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,7vw,84px);line-height:1.02;margin:0 0 18px;letter-spacing:-.5px}
+.claim{font-size:clamp(18px,2.2vw,22px);color:var(--muted);margin:0 0 36px}
+.claim span{color:var(--ink)}
+.quote{font-family:var(--serif);font-size:clamp(22px,2.8vw,30px);line-height:1.35;margin:0;padding-left:22px;border-left:3px solid var(--accent);max-width:28ch}
+.portrait{margin:0;justify-self:end;width:100%;max-width:340px}
+.portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius);filter:saturate(.9)}
+.portrait figcaption{font-size:13px;color:var(--muted);margin-top:10px}
 
-  body::after {
-    content:'';
-    position:fixed; inset:0; z-index:100;
-    pointer-events:none; opacity:0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size:180px 180px;
-  }
+/* Sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:36px}
+.sec-num{font-family:var(--serif);color:var(--accent);font-size:15px}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.6vw,40px);line-height:1.15;margin:0}
+h2 em{font-style:italic;color:var(--accent)}
 
-  .ambient {
-    position:fixed; inset:0; z-index:0; pointer-events:none;
-    background:
-      radial-gradient(ellipse 80% 60% at 15% 10%, rgba(27,58,92,0.5) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 40% at 90% 85%, rgba(201,168,76,0.05) 0%, transparent 55%);
-  }
+/* About */
+.about{display:grid;grid-template-columns:1.6fr 1fr;gap:56px}
+.about p{margin:0 0 18px;max-width:62ch}
+.about p.lead{font-size:20px}
+.facts{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:26px 26px 20px;align-self:start}
+.facts h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 14px}
+.path{list-style:none;margin:0 0 22px;padding:0}
+.path li{position:relative;padding:0 0 14px 22px;font-size:15.5px}
+.path li::before{content:"";position:absolute;left:4px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.path li:not(:last-child)::after{content:"";position:absolute;left:7px;top:19px;bottom:-2px;width:1px;background:var(--line)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{font-size:14px;padding:5px 12px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
 
-  /* ── TOPBAR ── */
-  .topbar {
-    position:fixed; top:0; left:0; right:0; z-index:50;
-    padding:14px 36px;
-    display:flex; align-items:center; justify-content:flex-end;
-    background:rgba(6,17,31,0.7);
-    backdrop-filter:blur(20px);
-    border-bottom:1px solid rgba(201,168,76,0.06);
-    animation:slideDown 0.4s ease both;
-  }
+/* ZYRELO panel */
+.panel{background:var(--panel);color:var(--panel-ink);border-radius:20px;padding:48px;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center}
+.panel .eyebrow{color:var(--panel-accent)}
+.panel h2{color:var(--panel-ink)}
+.panel p{color:var(--panel-muted);margin:18px 0 0;max-width:60ch}
+.panel p strong{color:var(--panel-ink);font-weight:500}
+.panel-actions{display:flex;flex-direction:column;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 20px;border-radius:12px;text-decoration:none;font-weight:500;font-size:16px;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--panel-accent);color:#0F1E35}
+.btn-ghost{border:1px solid color-mix(in srgb,var(--panel-ink) 25%,transparent);color:var(--panel-ink)}
+.btn small{font-weight:400;opacity:.75;font-size:13px}
 
-  @keyframes slideDown {
-    from { opacity:0; transform:translateY(-8px); }
-    to   { opacity:1; transform:translateY(0); }
-  }
+/* Observations */
+.intro-note{color:var(--muted);margin:-18px 0 32px;font-size:15.5px}
+.obs{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.obs article{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.obs .n{font-family:var(--serif);color:var(--accent);font-size:14px}
+.obs h3{font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.3;margin:8px 0 12px}
+.obs p{margin:0;color:var(--muted)}
+.obs p b{color:var(--ink);font-weight:500}
+.nudge{margin:36px 0 0;font-size:19px;font-family:var(--serif)}
+.nudge a{color:var(--accent);text-underline-offset:4px}
 
-  .topbar-contact {
-    display:flex; align-items:center;
-    background:rgba(245,240,232,0.05);
-    border:1px solid rgba(245,240,232,0.1);
-    border-radius:100px;
-    padding:7px 18px;
-    text-decoration:none; color:var(--fog);
-    font-size:12px; font-weight:400;
-    letter-spacing:0.06em;
-    transition:all 0.2s;
-  }
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.c{display:block;padding:20px;border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;background:var(--paper);transition:border-color .15s ease,transform .15s ease}
+.c:hover{border-color:var(--accent);transform:translateY(-1px)}
+.c span{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.c b{font-weight:500;font-size:16px;word-break:break-word}
+.contact-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-top:22px;color:var(--muted);font-size:15px}
+.vcard{background:none;border:1px solid var(--line);color:var(--ink);font:inherit;font-size:15px;padding:10px 16px;border-radius:10px;cursor:pointer}
+.vcard:hover{border-color:var(--accent)}
 
-  .topbar-contact:hover {
-    background:rgba(245,240,232,0.08);
-    border-color:rgba(245,240,232,0.18);
-    color:var(--mist);
-  }
+footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{color:var(--muted);text-decoration:none;margin-left:18px}
+footer a:first-child{margin-left:0}
+footer a:hover{color:var(--ink)}
 
-  /* ── HERO ── */
-  .hero {
-    position:relative; z-index:1;
-    min-height:100vh;
-    display:flex; flex-direction:column;
-    justify-content:center;
-    padding:110px 36px 80px;
-    max-width:720px; margin:0 auto;
-  }
-
-  .hero-kicker {
-    font-size:10px; font-weight:400;
-    letter-spacing:0.24em; text-transform:uppercase;
-    color:var(--gold); margin-bottom:22px;
-    animation:fadeUp 0.5s 0.08s ease both;
-    display:flex; align-items:center; gap:12px;
-  }
-
-  .hero-kicker::before {
-    content:''; display:block;
-    width:30px; height:1px;
-    background:var(--gold); opacity:0.55; flex-shrink:0;
-  }
-
-  .hero-name {
-    font-family:'Fraunces', serif;
-    font-weight:900;
-    font-size:clamp(58px, 12vw, 104px);
-    letter-spacing:-0.04em; line-height:0.9;
-    color:var(--cream);
-    animation:fadeUp 0.5s 0.16s ease both;
-  }
-
-  .hero-name .outline {
-    color:transparent;
-    -webkit-text-stroke:1.5px var(--gold);
-  }
-
-  .hero-tagline {
-    font-family:'Fraunces', serif;
-    font-style:italic; font-weight:300;
-    font-size:clamp(15px, 2.8vw, 21px);
-    color:var(--fog); margin-top:22px;
-    letter-spacing:-0.01em;
-    animation:fadeUp 0.5s 0.26s ease both;
-  }
-
-  .hero-divider {
-    width:36px; height:1px;
-    background:linear-gradient(to right, var(--gold), transparent);
-    margin:38px 0 0;
-    animation:fadeUp 0.5s 0.32s ease both;
-  }
-
-  .hero-signature {
-    margin-top:32px;
-    font-family:'Fraunces', serif;
-    font-weight:700;
-    font-size:clamp(18px, 3vw, 26px);
-    letter-spacing:-0.02em; line-height:1.3;
-    color:var(--cream); max-width:540px;
-    animation:fadeUp 0.5s 0.38s ease both;
-  }
-
-  .hero-bio {
-    margin-top:32px;
-    font-size:clamp(14px, 1.8vw, 15px);
-    font-weight:300; color:var(--mist);
-    max-width:520px; line-height:1.95;
-    animation:fadeUp 0.5s 0.44s ease both;
-  }
-
-  .hero-bio p + p { margin-top:16px; }
-
-  .hero-disclaimer {
-    margin-top:28px;
-    font-size:12px; font-weight:300;
-    color:rgba(245,240,232,0.22);
-    font-style:italic; letter-spacing:0.02em;
-    animation:fadeUp 0.5s 0.5s ease both;
-  }
-
-  .affinity-row {
-    display:flex; flex-wrap:wrap; gap:8px;
-    margin-top:36px;
-    animation:fadeUp 0.5s 0.54s ease both;
-  }
-
-  .affinity {
-    background:var(--cream-dim);
-    border:1px solid rgba(245,240,232,0.07);
-    border-radius:100px;
-    padding:5px 14px;
-    font-size:11px; font-weight:300;
-    color:var(--fog); letter-spacing:0.05em;
-    transition:all 0.2s;
-  }
-
-  .affinity:hover {
-    background:var(--gold-soft);
-    border-color:var(--gold-line);
-    color:var(--cream);
-  }
-
-  .scroll-nudge {
-    margin-top:60px;
-    animation:fadeUp 0.5s 0.6s ease both;
-    display:flex; align-items:center; gap:14px;
-    cursor:pointer; user-select:none;
-  }
-
-  .nudge-line {
-    height:1px;
-    background:linear-gradient(to right, rgba(201,168,76,0.45), transparent);
-    animation:nudgePulse 2.6s infinite;
-  }
-
-  .nudge-text {
-    font-size:10px; letter-spacing:0.2em;
-    text-transform:uppercase; color:var(--fog);
-    white-space:nowrap;
-  }
-
-  @keyframes nudgePulse {
-    0%,100% { opacity:0.25; width:28px; }
-    50%      { opacity:0.8;  width:46px; }
-  }
-
-  @keyframes fadeUp {
-    from { opacity:0; transform:translateY(18px); }
-    to   { opacity:1; transform:translateY(0); }
-  }
-
-  /* ── SECTIONS ── */
-  .section {
-    position:relative; z-index:1;
-    max-width:720px; margin:0 auto;
-    padding:80px 36px;
-    border-top:1px solid rgba(245,240,232,0.04);
-  }
-
-  .eyebrow {
-    font-size:10px; font-weight:400;
-    letter-spacing:0.22em; text-transform:uppercase;
-    color:var(--gold); margin-bottom:16px;
-    display:flex; align-items:center; gap:12px;
-  }
-
-  .eyebrow::before {
-    content:''; display:block;
-    width:20px; height:1px;
-    background:var(--gold); opacity:0.45; flex-shrink:0;
-  }
-
-  .section-title {
-    font-family:'Fraunces', serif;
-    font-weight:700;
-    font-size:clamp(22px, 3.5vw, 32px);
-    letter-spacing:-0.025em; line-height:1.2;
-    color:var(--cream); margin-bottom:32px;
-  }
-
-  .section-title em {
-    font-style:italic; font-weight:300; color:var(--fog);
-  }
-
-  /* ── FAQ ── */
-  .faq-list { display:flex; flex-direction:column; }
-  .faq-item { border-bottom:1px solid rgba(245,240,232,0.05); }
-
-  .faq-q {
-    width:100%; background:none; border:none;
-    padding:20px 0;
-    display:flex; align-items:center; justify-content:space-between; gap:16px;
-    font-family:'DM Sans', sans-serif;
-    font-size:15px; font-weight:400;
-    color:var(--mist); cursor:pointer;
-    text-align:left; transition:color 0.2s;
-  }
-
-  .faq-q:hover { color:var(--cream); }
-  .faq-item.open .faq-q { color:var(--cream); }
-
-  .faq-icon {
-    width:20px; height:20px; flex-shrink:0;
-    border:1px solid rgba(201,168,76,0.22);
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    transition:all 0.25s; color:var(--gold);
-  }
-
-  .faq-icon svg { width:8px; height:8px; transition:transform 0.25s; }
-  .faq-item.open .faq-icon { background:var(--gold-soft); border-color:var(--gold); }
-  .faq-item.open .faq-icon svg { transform:rotate(45deg); }
-
-  .faq-a {
-    max-height:0; overflow:hidden; padding:0;
-    font-size:14px; font-weight:300;
-    color:var(--fog); line-height:1.9;
-    transition:max-height 0.35s ease, padding 0.35s ease;
-  }
-
-  .faq-item.open .faq-a { max-height:400px; padding:0 0 24px; }
-
-  /* ── CTA ── */
-  .cta-section {
-    position:relative; z-index:1;
-    max-width:720px; margin:0 auto;
-    padding:0 36px 80px;
-  }
-
-  .cta-block {
-    border-top:1px solid rgba(201,168,76,0.12);
-    padding-top:40px;
-  }
-
-  .cta-text {
-    font-family:'Fraunces', serif;
-    font-style:italic; font-weight:300;
-    font-size:clamp(16px, 2.5vw, 22px);
-    color:rgba(245,240,232,0.5);
-    line-height:1.55; letter-spacing:-0.01em;
-    max-width:480px;
-  }
-
-  /* ── CONTACT ── */
-  .contact-stack {
-    display:flex; flex-direction:column; gap:10px;
-    margin-top:36px;
-  }
-
-  .wa-card {
-    display:flex; align-items:center; gap:16px;
-    background:rgba(245,240,232,0.03);
-    border:1px solid rgba(245,240,232,0.08);
-    border-radius:14px; padding:20px 22px;
-    text-decoration:none; color:var(--cream);
-    transition:all 0.2s;
-  }
-
-  .wa-card:hover {
-    background:rgba(245,240,232,0.06);
-    border-color:rgba(245,240,232,0.14);
-    transform:translateY(-1px);
-  }
-
-  .wa-icon-wrap {
-    width:42px; height:42px; flex-shrink:0;
-    background:rgba(37,211,102,0.08);
-    border-radius:10px;
-    display:flex; align-items:center; justify-content:center;
-  }
-
-  .wa-icon-wrap svg { width:20px; height:20px; }
-
-  .wa-label { font-size:10px; font-weight:400; color:var(--fog); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px; }
-  .wa-val   { font-size:15px; font-weight:400; color:var(--mist); }
-
-  .contact-row {
-    display:grid; grid-template-columns:1fr 1fr; gap:10px;
-  }
-
-  @media (max-width:420px) { .contact-row { grid-template-columns:1fr; } }
-
-  .c-card {
-    display:flex; align-items:center; gap:12px;
-    background:var(--cream-dim);
-    border:1px solid rgba(245,240,232,0.06);
-    border-radius:12px; padding:14px 16px;
-    text-decoration:none; color:var(--cream);
-    transition:all 0.2s;
-  }
-
-  .c-card:hover {
-    background:rgba(27,58,92,0.25);
-    border-color:rgba(245,240,232,0.1);
-    transform:translateY(-1px);
-  }
-
-  .c-icon {
-    width:32px; height:32px; flex-shrink:0;
-    background:var(--gold-soft); border-radius:7px;
-    display:flex; align-items:center; justify-content:center;
-  }
-
-  .c-icon svg { width:13px; height:13px; }
-  .c-lbl { font-size:10px; font-weight:400; color:var(--fog); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:2px; }
-  .c-val { font-size:13px; font-weight:300; color:var(--mist); }
-
-  .vcard-btn {
-    display:flex; align-items:center; justify-content:center; gap:10px;
-    margin-top:14px; padding:13px 20px;
-    background:var(--cream-dim);
-    border:1px solid rgba(245,240,232,0.07);
-    border-radius:12px;
-    text-decoration:none; color:var(--fog);
-    font-size:12px; font-weight:300;
-    letter-spacing:0.05em; transition:all 0.2s; cursor:pointer;
-  }
-
-  .vcard-btn:hover {
-    background:var(--gold-soft);
-    border-color:var(--gold-line);
-    color:var(--cream);
-  }
-
-  .vcard-btn svg { width:14px; height:14px; color:var(--gold); flex-shrink:0; }
-
-  /* ── FOOTER ── */
-  .footer {
-    position:relative; z-index:1;
-    max-width:720px; margin:0 auto;
-    padding:24px 36px 48px;
-    border-top:1px solid rgba(245,240,232,0.04);
-    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;
-  }
-
-  .footer-left {
-    font-size:11px; font-weight:300;
-    color:rgba(245,240,232,0.14); letter-spacing:0.06em;
-  }
-
-  .footer-right { display:flex; gap:18px; }
-
-  .footer-right a {
-    font-size:11px; font-weight:300;
-    color:rgba(245,240,232,0.18);
-    text-decoration:none; letter-spacing:0.04em;
-    transition:color 0.18s;
-  }
-
-  .footer-right a:hover { color:var(--gold); }
+@media (max-width:900px){
+  .hero{padding-top:56px;padding-bottom:48px}
+  .hero-grid,.about,.panel{grid-template-columns:1fr;gap:36px}
+  .portrait{justify-self:start;max-width:260px}
+  .panel{padding:32px}
+  .obs{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  nav a{margin-left:14px;font-size:14px}
+  nav a.hide-sm{display:none}
+  section{padding:56px 0}
+  .contact-grid{grid-template-columns:1fr}
+  .panel{padding:26px;border-radius:16px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
-<div class="ambient"></div>
-
-<!-- TOPBAR -->
-<nav class="topbar">
-  <a href="#kontakt" class="topbar-contact">Kontakt</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-kicker">Bad Liebenzell · Nordschwarzwald</div>
-
-  <h1 class="hero-name">
-    Björn<br><span class="outline">Zeinert</span>
-  </h1>
-
-  <p class="hero-tagline">Prozesse. Menschen. Technologie.</p>
-
-  <div class="hero-divider"></div>
-
-  <p class="hero-signature">Die meisten Probleme sind keine technischen – sie zeigen sich nur dort.</p>
-
-  <div class="hero-bio">
-    <p>Technologie ist kein Ersatz für Klarheit. Sie verstärkt, was da ist – gute Prozesse genauso wie schlechte.</p>
-    <p>Genau das sehe ich immer wieder im Alltag vieler Betriebe – oft dort, wo es eigentlich längst laufen sollte.</p>
-    <p>Mich interessiert vor allem, warum Dinge im Alltag anders laufen als gedacht – selbst wenn Systeme und Konzepte eigentlich stimmen.</p>
-    <p>Mein Einstieg war an der Werkzeugmaschine. Später kamen berufsbegleitend Maschinenbau und Wirtschaftsingenieurwesen dazu. So ist aus praktischer Erfahrung ein klarer Fokus entstanden: Prozesse so zu verstehen, wie sie wirklich gelebt werden – nicht nur, wie sie geplant sind.</p>
-    <p>Heute verbinde ich genau diese Perspektiven: Praxis, Technik und Struktur – mit dem Blick darauf, was im Betrieb tatsächlich trägt.</p>
-    <p>KI sehe ich dabei nicht als Selbstzweck, sondern als Hebel. Sie macht sichtbar, was vorher schon da war – nur schneller.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Björn Zeinert</a>
+    <nav aria-label="Hauptnavigation">
+      <a class="hide-sm" href="#ueber">Über mich</a>
+      <a href="#zyrelo">ZYRELO</a>
+      <a class="hide-sm" href="#beobachtungen">Beobachtungen</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
   </div>
+</header>
 
-  <p class="hero-disclaimer">Ich teile hier ausschließlich persönliche Gedanken und Beobachtungen.</p>
-
-  <div class="affinity-row">
-    <span class="affinity">Familienvater</span>
-    <span class="affinity">Ausdauersport</span>
-  </div>
-
-  <div class="scroll-nudge" onclick="document.querySelector('#fragen').scrollIntoView({behavior:'smooth'})">
-    <div class="nudge-line"></div>
-    <span class="nudge-text">Mehr erfahren</span>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section" id="fragen">
-  <div class="eyebrow">Beobachtungen</div>
-  <h2 class="section-title">Was ich immer wieder<br><em>sehe</em></h2>
-
-  <div class="faq-list">
-
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Was wird bei Veränderungen in Betrieben am häufigsten unterschätzt?
-        <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div>
-      </button>
-      <div class="faq-a">
-        Der Schritt davor. Nicht die Veränderung selbst – sondern das Verständnis dessen, was eigentlich gerade läuft. Meist liegt es nicht an fehlendem Willen oder falschen Tools. Es fehlt ein gemeinsames Bild davon, wie der Alltag wirklich funktioniert – bevor man ihn verändert.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Was verändert KI tatsächlich – und was nicht?
-        <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div>
-      </button>
-      <div class="faq-a">
-        Interessant wird es dort, wo KI auf klare Abläufe trifft. Dann kann sie wirklich beschleunigen. Wo Unklarheit herrscht, macht sie diese sichtbarer – nicht kleiner. Was sich nicht verändert: die Notwendigkeit zu verstehen, warum etwas so läuft wie es läuft.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Wie näherst du dich komplexen Situationen?
-        <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div>
-      </button>
-      <div class="faq-a">
-        Ich fange mit dem an, was ich beobachte – nicht mit dem, was erklärt wird. Beides ist wertvoll, aber es sind selten dasselbe. Komplexität löst sich oft nicht durch mehr Analyse, sondern durch das richtige Bild der Realität.
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        Wo scheitern Prozesse in der Praxis am häufigsten?
-        <div class="faq-icon"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="1" x2="5" y2="9"/><line x1="1" y1="5" x2="9" y2="5"/></svg></div>
-      </button>
-      <div class="faq-a">
-        Meist nicht dort, wo man sucht. Auf dem Papier stimmt vieles – Verantwortlichkeiten, Systeme, Abläufe. Im Betrieb laufen dieselben Dinge dann trotzdem anders. Der Abstand zwischen geplantem und gelebtem Prozess ist fast immer größer als gedacht.
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <div class="cta-block">
-    <p class="cta-text">Wenn du gerade an einem Punkt bist, an dem Prozesse nicht mehr sauber greifen – ich tausche mich gern aus.</p>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section" id="kontakt">
-  <div class="eyebrow">Kontakt</div>
-  <h2 class="section-title">Direkt &<br><em>unkompliziert.</em></h2>
-
-  <div class="contact-stack">
-
-    <a href="https://wa.me/4915756647548" target="_blank" class="wa-card">
-      <div class="wa-icon-wrap">
-        <svg viewBox="0 0 24 24" fill="#25D166"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      </div>
+<main id="inhalt">
+  <div class="wrap hero" id="top">
+    <div class="hero-grid">
       <div>
-        <div class="wa-label">WhatsApp · direkt</div>
-        <div class="wa-val">+49 157 566 47548</div>
+        <p class="eyebrow">Bad Liebenzell · Nordschwarzwald</p>
+        <h1>Björn Zeinert</h1>
+        <p class="claim"><span>Prozesse.</span> <span>Menschen.</span> <span>Technologie.</span></p>
+        <p class="quote">Die meisten Probleme sind keine technischen. Sie zeigen sich nur dort.</p>
       </div>
-    </a>
-
-    <div class="contact-row">
-
-      <a href="mailto:mail@bjoernzeinert.de" class="c-card">
-        <div class="c-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
-        </div>
-        <div>
-          <div class="c-lbl">E-Mail</div>
-          <div class="c-val">mail@bjoernzeinert.de</div>
-        </div>
-      </a>
-
-      <a href="https://www.linkedin.com/in/bjoern-zeinert" target="_blank" class="c-card">
-        <div class="c-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
-            <rect x="2" y="9" width="4" height="12"/>
-            <circle cx="4" cy="4" r="2"/>
-          </svg>
-        </div>
-        <div>
-          <div class="c-lbl">LinkedIn</div>
-          <div class="c-val">bjoern-zeinert</div>
-        </div>
-      </a>
-
-      <a href="tel:+4915756647548" class="c-card">
-        <div class="c-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.09 9.81 19.79 19.79 0 01.08 1.18 2 2 0 012.07 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6z"/>
-          </svg>
-        </div>
-        <div>
-          <div class="c-lbl">Telefon</div>
-          <div class="c-val">+49 157 566 47548</div>
-        </div>
-      </a>
-
+      <figure class="portrait">
+        <img src="portrait.jpg" alt="Björn Zeinert" width="340" height="425" onerror="this.parentElement.style.display='none'">
+      </figure>
     </div>
-
-    <a href="#" onclick="downloadVCard(); return false;" class="vcard-btn">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
-        <circle cx="12" cy="7" r="4"/>
-        <line x1="12" y1="14" x2="12" y2="20"/>
-        <polyline points="9 17 12 20 15 17"/>
-      </svg>
-      Kontakt speichern
-    </a>
-
   </div>
-</section>
 
-<footer class="footer">
-  <div class="footer-left">75378 Bad Liebenzell · Baden-Württemberg</div>
-  <div class="footer-right">
-    <a href="/impressum.html">Impressum</a>
-    <a href="/datenschutz.html">Datenschutz</a>
+  <section id="ueber">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">01</span><h2>Über <em>mich</em></h2></div>
+      <div class="about">
+        <div>
+          <p class="lead">Technologie ist kein Ersatz für Klarheit. Sie verstärkt, was da ist: gute Prozesse genauso wie schlechte.</p>
+          <p>Genau das sehe ich immer wieder im Alltag vieler Betriebe, oft dort, wo es eigentlich längst laufen sollte. Mich interessiert vor allem, warum Dinge im Alltag anders laufen als gedacht, selbst wenn Systeme und Konzepte eigentlich stimmen.</p>
+          <p>Mein Einstieg war an der Werkzeugmaschine. Später kamen berufsbegleitend Maschinenbau und Wirtschaftsingenieurwesen dazu. So ist aus praktischer Erfahrung ein klarer Fokus entstanden: Prozesse so zu verstehen, wie sie wirklich gelebt werden, nicht nur, wie sie geplant sind.</p>
+          <p>Heute verbinde ich genau diese Perspektiven: Praxis, Technik und Struktur, mit dem Blick darauf, was im Betrieb tatsächlich trägt.</p>
+          <p>KI sehe ich dabei nicht als Selbstzweck, sondern als Hebel. Sie macht sichtbar, was vorher schon da war. Nur schneller.</p>
+        </div>
+        <aside class="facts" aria-label="Kurzprofil">
+          <h3>Werdegang</h3>
+          <ul class="path">
+            <li>Werkzeugmaschine</li>
+            <li>Maschinenbau, berufsbegleitend</li>
+            <li>Wirtschaftsingenieurwesen, berufsbegleitend</li>
+            <li>Inhaber ZYRELO</li>
+          </ul>
+          <h3>Privat</h3>
+          <ul class="tags"><li>Familienvater</li><li>Ausdauersport</li></ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="zyrelo">
+    <div class="wrap">
+      <div class="panel">
+        <div>
+          <p class="eyebrow">Beruflich · ZYRELO</p>
+          <h2>Beratung für KI-Sichtbarkeit (GEO)</h2>
+          <p>Mit ZYRELO berate ich Unternehmen zu ihrer Sichtbarkeit in KI-Systemen. <strong>ZYRELO misst, ob und wie Unternehmen in den Antworten von KI-Systemen wie ChatGPT, Perplexity und Gemini genannt werden, und leitet daraus konkrete Maßnahmen ab.</strong> Auf Wunsch übernimmt ZYRELO auch die Umsetzung: Inhalte, Prozesse, Automatisierung.</p>
+          <p>Mein Schwerpunkt sind kleine und mittlere Unternehmen im Raum Pforzheim und Nordschwarzwald.</p>
+        </div>
+        <div class="panel-actions">
+          <a class="btn btn-primary" href="https://zyrelo.ai">zyrelo.ai <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="https://zyrelo.ai/check/"><span>Kostenloser KI-Sichtbarkeits-Check<br><small>Werden Sie von ChatGPT und Perplexity genannt?</small></span><span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="beobachtungen">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">02</span><h2>Was ich immer wieder <em>sehe</em></h2></div>
+      <p class="intro-note">Hier teile ich persönliche Gedanken und Beobachtungen.</p>
+      <div class="obs">
+        <article>
+          <span class="n">01</span>
+          <h3>Was wird bei Veränderungen in Betrieben am häufigsten unterschätzt?</h3>
+          <p><b>Der Schritt davor.</b> Nicht die Veränderung selbst, sondern das Verständnis dessen, was eigentlich gerade läuft. Meist liegt es nicht an fehlendem Willen oder falschen Tools. Es fehlt ein gemeinsames Bild davon, wie der Alltag wirklich funktioniert, bevor man ihn verändert.</p>
+        </article>
+        <article>
+          <span class="n">02</span>
+          <h3>Was verändert KI tatsächlich, und was nicht?</h3>
+          <p>Interessant wird es dort, wo KI auf klare Abläufe trifft. Dann kann sie wirklich beschleunigen. Wo Unklarheit herrscht, macht sie diese sichtbarer, nicht kleiner. <b>Was sich nicht verändert:</b> die Notwendigkeit zu verstehen, warum etwas so läuft, wie es läuft.</p>
+        </article>
+        <article>
+          <span class="n">03</span>
+          <h3>Wie näherst du dich komplexen Situationen?</h3>
+          <p>Ich fange mit dem an, was ich beobachte, nicht mit dem, was erklärt wird. Beides ist wertvoll, aber es ist selten dasselbe. <b>Komplexität löst sich oft nicht durch mehr Analyse,</b> sondern durch das richtige Bild der Realität.</p>
+        </article>
+        <article>
+          <span class="n">04</span>
+          <h3>Wo scheitern Prozesse in der Praxis am häufigsten?</h3>
+          <p>Meist nicht dort, wo man sucht. Auf dem Papier stimmt vieles: Verantwortlichkeiten, Systeme, Abläufe. Im Betrieb laufen dieselben Dinge dann trotzdem anders. <b>Der Abstand zwischen geplantem und gelebtem Prozess</b> ist fast immer größer als gedacht.</p>
+        </article>
+      </div>
+      <p class="nudge">Wenn du gerade an einem Punkt bist, an dem Prozesse nicht mehr sauber greifen: <a href="#kontakt">Ich tausche mich gern aus.</a></p>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>Direkt &amp; <em>unkompliziert.</em></h2></div>
+      <div class="contact-grid">
+        <a class="c" href="https://wa.me/4915679172268"><span>WhatsApp</span><b>+49 15679 172268</b></a>
+        <a class="c" href="tel:+4915679172268"><span>Telefon</span><b>+49 15679 172268</b></a>
+        <a class="c" href="mailto:mail@bjoernzeinert.de"><span>E-Mail</span><b>mail@bjoernzeinert.de</b></a>
+        <a class="c" href="https://www.linkedin.com/in/bjoern-zeinert"><span>LinkedIn</span><b>bjoern-zeinert</b></a>
+      </div>
+      <div class="contact-foot">
+        <span>75378 Bad Liebenzell · Baden-Württemberg</span>
+        <button class="vcard" type="button" id="vcard">Kontakt speichern</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="y">2026</span> Björn Zeinert</span>
+    <span><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></span>
   </div>
 </footer>
 
 <script>
-function toggleFaq(btn) {
-  var item = btn.parentElement;
-  var isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
-  if (!isOpen) item.classList.add('open');
-}
-
-function downloadVCard() {
-  var vcard = [
-    'BEGIN:VCARD',
-    'VERSION:3.0',
-    'FN:Björn Zeinert',
-    'N:Zeinert;Björn;;;',
-    'TEL;TYPE=CELL:+4915756647548',
-    'EMAIL:mail@bjoernzeinert.de',
-    'URL:https://aboutme.bjoernzeinert.de',
-    'NOTE:Prozesse. Menschen. Technologie.',
+document.getElementById('y').textContent = new Date().getFullYear();
+document.getElementById('vcard').addEventListener('click', function () {
+  var v = [
+    'BEGIN:VCARD','VERSION:3.0',
+    'N:Zeinert;Björn;;;','FN:Björn Zeinert',
+    'TEL;TYPE=CELL:+4915679172268',
+    'EMAIL;TYPE=INTERNET:mail@bjoernzeinert.de',
+    'ADR;TYPE=HOME:;;;Bad Liebenzell;Baden-Württemberg;75378;Deutschland',
+    'URL:https://about.bjoernzeinert.de/',
+    'X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/bjoern-zeinert',
     'END:VCARD'
   ].join('\r\n');
-
-  var blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
-  var url  = URL.createObjectURL(blob);
-  var a    = document.createElement('a');
-  a.href     = url;
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([v], {type: 'text/vcard;charset=utf-8'}));
   a.download = 'bjoern-zeinert.vcf';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-}
+  document.body.appendChild(a); a.click(); a.remove();
+});
 </script>
 </body>
 </html>
