@@ -32,7 +32,7 @@ h1{font-weight:700;font-size:clamp(42px,6.6vw,80px);line-height:1.04;margin:0 0 
 .project h3{font-weight:700;font-size:clamp(24px,2.8vw,32px);line-height:1.15;margin:0;color:var(--hell);letter-spacing:-.02em}
 .project p{margin:0;color:var(--hell-2)}
 .project p strong{color:var(--hell);font-weight:600}
-.project .logo{display:block;height:22px;width:auto;margin-bottom:6px}
+.project .logo{display:block;height:28px;width:auto;margin-bottom:6px}
 .project .shot{margin:0}
 .project .shot img{display:block;width:100%;height:auto;border:1px solid var(--nacht-linie)}
 .project .shot figcaption{font-family:var(--mono);font-size:12px;color:var(--hell-2);margin-top:8px;opacity:.8}
