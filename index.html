@@ -4,15 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Björn Zeinert · Prozesse, Menschen, Technologie · Bad Liebenzell</title>
-<meta name="description" content="Björn Zeinert aus Bad Liebenzell: Prozesse, Menschen, Technologie. Inhaber von ZYRELO, Beratung für KI-Sichtbarkeit (GEO) für kleine und mittlere Unternehmen im Raum Pforzheim und Nordschwarzwald.">
+<meta name="description" content="Björn Zeinert aus Bad Liebenzell: Prozesse, Menschen, Technologie. Inhaber von ZYRELO (KI-Sichtbarkeit für den Mittelstand) und Gründer von Suralo (Trainingsplanung für Triathleten).">
 <link rel="canonical" href="https://about.bjoernzeinert.de/">
+<link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Björn Zeinert · Prozesse, Menschen, Technologie">
-<meta property="og:description" content="Persönliche Seite von Björn Zeinert, Bad Liebenzell. Inhaber von ZYRELO, Beratung für KI-Sichtbarkeit (GEO).">
+<meta property="og:description" content="Persönliche Seite von Björn Zeinert, Bad Liebenzell. Inhaber von ZYRELO und Gründer von Suralo.">
 <meta property="og:url" content="https://about.bjoernzeinert.de/">
 <meta property="og:image" content="https://about.bjoernzeinert.de/portrait.jpg">
-<meta name="theme-color" content="#F6F3EE" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0B1626" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F5F2EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A1628" media="(prefers-color-scheme: dark)">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -21,7 +22,7 @@
   "name": "Björn Zeinert",
   "url": "https://about.bjoernzeinert.de/",
   "image": "https://about.bjoernzeinert.de/portrait.jpg",
-  "jobTitle": "Inhaber ZYRELO",
+  "jobTitle": "Inhaber ZYRELO, Gründer Suralo",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Bad Liebenzell",
@@ -38,145 +39,25 @@
   "knowsAbout": ["Prozessmanagement", "KI-Sichtbarkeit", "Generative Engine Optimization", "Wirtschaftsingenieurwesen"],
   "sameAs": [
     "https://www.linkedin.com/in/bjoern-zeinert",
-    "https://zyrelo.ai"
+    "https://zyrelo.ai",
+    "https://suralo.app"
   ]
 }
 </script>
-<style>
-:root{
-  --paper:#F6F3EE; --paper-2:#EFEAE2; --ink:#0F1E35; --muted:#56606E; --line:#E0DAD0;
-  --accent:#8C6D1F; --accent-ink:#FFFFFF; --accent-soft:#EFE6D0;
-  --panel:#0F1E35; --panel-ink:#F3EFE8; --panel-muted:#B6BECB; --panel-accent:#C5A24A;
-  --serif:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Georgia,"Times New Roman",serif;
-  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  --radius:14px; --wrap:1080px;
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    --paper:#0B1626; --paper-2:#12213A; --ink:#ECE8E1; --muted:#A7B0BE; --line:#22324C;
-    --accent:#C5A24A; --accent-ink:#0F1E35; --accent-soft:#1F2B3F;
-    --panel:#12213A; --panel-ink:#ECE8E1; --panel-muted:#A7B0BE; --panel-accent:#C5A24A;
-  }
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-a{color:inherit}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-.skip{position:absolute;left:-9999px}
-.skip:focus{left:16px;top:16px;background:var(--ink);color:var(--paper);padding:8px 12px;border-radius:8px;z-index:10}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
-
-/* Header */
-header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line)}
-header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{font-family:var(--serif);font-size:19px;text-decoration:none;letter-spacing:.2px}
-nav a{font-size:15px;color:var(--muted);text-decoration:none;margin-left:22px}
-nav a:hover{color:var(--ink)}
-
-/* Hero */
-.hero{padding-top:88px;padding-bottom:64px}
-.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 18px}
-.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:end}
-h1{font-family:var(--serif);font-weight:500;font-size:clamp(44px,7vw,84px);line-height:1.02;margin:0 0 18px;letter-spacing:-.5px}
-.claim{font-size:clamp(18px,2.2vw,22px);color:var(--muted);margin:0 0 36px}
-.claim span{color:var(--ink)}
-.quote{font-family:var(--serif);font-size:clamp(22px,2.8vw,30px);line-height:1.35;margin:0;padding-left:22px;border-left:3px solid var(--accent);max-width:28ch}
-.portrait{margin:0;justify-self:end;width:100%;max-width:340px}
-.portrait img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius);filter:saturate(.9)}
-.portrait figcaption{font-size:13px;color:var(--muted);margin-top:10px}
-
-/* Sections */
-section{padding:72px 0;border-top:1px solid var(--line)}
-.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:36px}
-.sec-num{font-family:var(--serif);color:var(--accent);font-size:15px}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.6vw,40px);line-height:1.15;margin:0}
-h2 em{font-style:italic;color:var(--accent)}
-
-/* About */
-.about{display:grid;grid-template-columns:1.6fr 1fr;gap:56px}
-.about p{margin:0 0 18px;max-width:62ch}
-.about p.lead{font-size:20px}
-.facts{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:26px 26px 20px;align-self:start}
-.facts h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 14px}
-.path{list-style:none;margin:0 0 22px;padding:0}
-.path li{position:relative;padding:0 0 14px 22px;font-size:15.5px}
-.path li::before{content:"";position:absolute;left:4px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
-.path li:not(:last-child)::after{content:"";position:absolute;left:7px;top:19px;bottom:-2px;width:1px;background:var(--line)}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
-.tags li{font-size:14px;padding:5px 12px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
-
-/* ZYRELO panel */
-.panel{background:var(--panel);color:var(--panel-ink);border-radius:20px;padding:48px;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center}
-.panel .eyebrow{color:var(--panel-accent)}
-.panel h2{color:var(--panel-ink)}
-.panel p{color:var(--panel-muted);margin:18px 0 0;max-width:60ch}
-.panel p strong{color:var(--panel-ink);font-weight:500}
-.panel-actions{display:flex;flex-direction:column;gap:12px}
-.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 20px;border-radius:12px;text-decoration:none;font-weight:500;font-size:16px;transition:transform .15s ease,background .15s ease}
-.btn:hover{transform:translateY(-1px)}
-.btn-primary{background:var(--panel-accent);color:#0F1E35}
-.btn-ghost{border:1px solid color-mix(in srgb,var(--panel-ink) 25%,transparent);color:var(--panel-ink)}
-.btn small{font-weight:400;opacity:.75;font-size:13px}
-
-/* Observations */
-.intro-note{color:var(--muted);margin:-18px 0 32px;font-size:15.5px}
-.obs{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.obs article{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
-.obs .n{font-family:var(--serif);color:var(--accent);font-size:14px}
-.obs h3{font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.3;margin:8px 0 12px}
-.obs p{margin:0;color:var(--muted)}
-.obs p b{color:var(--ink);font-weight:500}
-.nudge{margin:36px 0 0;font-size:19px;font-family:var(--serif)}
-.nudge a{color:var(--accent);text-underline-offset:4px}
-
-/* Contact */
-.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.c{display:block;padding:20px;border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;background:var(--paper);transition:border-color .15s ease,transform .15s ease}
-.c:hover{border-color:var(--accent);transform:translateY(-1px)}
-.c span{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.c b{font-weight:500;font-size:16px;word-break:break-word}
-.contact-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-top:22px;color:var(--muted);font-size:15px}
-.vcard{background:none;border:1px solid var(--line);color:var(--ink);font:inherit;font-size:15px;padding:10px 16px;border-radius:10px;cursor:pointer}
-.vcard:hover{border-color:var(--accent)}
-
-footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:14px;color:var(--muted)}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-footer a{color:var(--muted);text-decoration:none;margin-left:18px}
-footer a:first-child{margin-left:0}
-footer a:hover{color:var(--ink)}
-
-@media (max-width:900px){
-  .hero{padding-top:56px;padding-bottom:48px}
-  .hero-grid,.about,.panel{grid-template-columns:1fr;gap:36px}
-  .portrait{justify-self:start;max-width:260px}
-  .panel{padding:32px}
-  .obs{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr 1fr}
-}
-@media (max-width:560px){
-  body{font-size:16px}
-  .wrap{padding:0 16px}
-  nav a{margin-left:14px;font-size:14px}
-  nav a.hide-sm{display:none}
-  section{padding:56px 0}
-  .contact-grid{grid-template-columns:1fr}
-  .panel{padding:26px;border-radius:16px}
-}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-</style>
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/home.css">
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top">Björn Zeinert</a>
+    <a class="brand" href="/">Björn Zeinert</a>
     <nav aria-label="Hauptnavigation">
-      <a class="hide-sm" href="#ueber">Über mich</a>
-      <a href="#zyrelo">ZYRELO</a>
-      <a class="hide-sm" href="#beobachtungen">Beobachtungen</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="/#projekte">Projekte</a>
+      <a class="hide-sm" href="/#ueber">Über mich</a>
+      <a class="hide-sm" href="/#beobachtungen">Beobachtungen</a>
+      <a href="/#kontakt">Kontakt</a>
     </nav>
   </div>
 </header>
@@ -185,10 +66,14 @@ footer a:hover{color:var(--ink)}
   <div class="wrap hero" id="top">
     <div class="hero-grid">
       <div>
-        <p class="eyebrow">Bad Liebenzell · Nordschwarzwald</p>
+        <p class="eyebrow">Inhaber ZYRELO · Gründer Suralo</p>
         <h1>Björn Zeinert</h1>
         <p class="claim"><span>Prozesse.</span> <span>Menschen.</span> <span>Technologie.</span></p>
         <p class="quote">Die meisten Probleme sind keine technischen. Sie zeigen sich nur dort.</p>
+        <div class="hero-cta">
+          <a class="btn btn-solid" href="https://zyrelo.ai">Für Unternehmen: ZYRELO <span aria-hidden="true">→</span></a>
+          <a class="btn btn-line" href="https://suralo.app">Für Triathleten: Suralo <span aria-hidden="true">→</span></a>
+        </div>
       </div>
       <figure class="portrait">
         <img src="portrait.jpg" alt="Björn Zeinert" width="340" height="425" onerror="this.parentElement.style.display='none'">
@@ -196,9 +81,44 @@ footer a:hover{color:var(--ink)}
     </div>
   </div>
 
+  <section id="projekte">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">01</span><h2>Woran ich <em>arbeite</em></h2></div>
+      <div class="projects">
+        <article class="project project-zyrelo">
+          <img class="logo" src="img/zyrelo-wortmarke-gold-dunkelgrund.svg" alt="ZYRELO" width="104" height="22">
+          <p class="eyebrow">Beruflich · ZYRELO</p>
+          <h3>Wird Ihr Betrieb von der KI genannt?</h3>
+          <p><strong>ZYRELO misst, ob und wie Unternehmen in den Antworten von KI-Systemen wie ChatGPT, Perplexity und Gemini genannt werden, und leitet daraus konkrete Maßnahmen ab.</strong> Auf Wunsch übernimmt ZYRELO auch die Umsetzung: Inhalte, Prozesse, Automatisierung.</p>
+          <p>Schwerpunkt: kleine und mittlere Unternehmen im Raum Pforzheim und Nordschwarzwald.</p>
+          <figure class="shot">
+            <img src="img/zyrelo-messkarte-beispiel-dunkel-500.webp" srcset="img/zyrelo-messkarte-beispiel-dunkel-500.webp 500w, img/zyrelo-messkarte-beispiel-dunkel-1000.webp 1000w" sizes="(min-width:900px) 460px, 90vw" width="1000" height="940" loading="lazy" alt="Beispiel-Messung Muster Fertigung GmbH: ChatGPT 0/10, Perplexity 3/10, Gemini 0/10; Beispiel, fiktive Firmen">
+            <figcaption>Beispiel mit fiktiven Firmen, kein Kundenergebnis.</figcaption>
+          </figure>
+          <div class="btns">
+            <a class="btn btn-primary" href="https://zyrelo.ai/check/"><span>Kostenloser KI-Sichtbarkeits-Check<br><small>Werden Sie von ChatGPT und Perplexity genannt?</small></span><span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="https://zyrelo.ai">zyrelo.ai <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="project project-suralo">
+          <img class="logo" src="img/suralo-logo-weiss.svg" alt="Suralo" width="89" height="22">
+          <p class="eyebrow">Eigenes Projekt · Suralo</p>
+          <h3>Ein Triathlon-Plan, der zu deiner Woche passt.</h3>
+          <p>Trainingsplanung für Triathlon: Schwimmen, Rad und Laufen in einem Plan, abgestimmt auf deine Zeit pro Wochentag.</p>
+          <p><strong>Gebaut im eigenen Training.</strong> Ich trainiere selbst auf die Langdistanz und baue Suralo für genau diesen Alltag.</p>
+          <span class="meta">Testphase ab November</span>
+          <div class="btns">
+            <a class="btn btn-primary" href="https://suralo.app/#start"><span>Infos zur Testphase</span><span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="https://suralo.app">suralo.app <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section id="ueber">
     <div class="wrap">
-      <div class="sec-head"><span class="sec-num">01</span><h2>Über <em>mich</em></h2></div>
+      <div class="sec-head"><span class="sec-num">02</span><h2>Über <em>mich</em></h2></div>
       <div class="about">
         <div>
           <p class="lead">Technologie ist kein Ersatz für Klarheit. Sie verstärkt, was da ist: gute Prozesse genauso wie schlechte.</p>
@@ -214,56 +134,36 @@ footer a:hover{color:var(--ink)}
             <li>Maschinenbau, berufsbegleitend</li>
             <li>Wirtschaftsingenieurwesen, berufsbegleitend</li>
             <li>Inhaber ZYRELO</li>
+            <li>Gründer Suralo</li>
           </ul>
           <h3>Privat</h3>
-          <ul class="tags"><li>Familienvater</li><li>Ausdauersport</li></ul>
+          <ul class="tags"><li>Familienvater</li><li>Ausdauersport</li><li>Triathlon</li></ul>
         </aside>
-      </div>
-    </div>
-  </section>
-
-  <section id="zyrelo">
-    <div class="wrap">
-      <div class="panel">
-        <div>
-          <p class="eyebrow">Beruflich · ZYRELO</p>
-          <h2>Beratung für KI-Sichtbarkeit (GEO)</h2>
-          <p>Mit ZYRELO berate ich Unternehmen zu ihrer Sichtbarkeit in KI-Systemen. <strong>ZYRELO misst, ob und wie Unternehmen in den Antworten von KI-Systemen wie ChatGPT, Perplexity und Gemini genannt werden, und leitet daraus konkrete Maßnahmen ab.</strong> Auf Wunsch übernimmt ZYRELO auch die Umsetzung: Inhalte, Prozesse, Automatisierung.</p>
-          <p>Mein Schwerpunkt sind kleine und mittlere Unternehmen im Raum Pforzheim und Nordschwarzwald.</p>
-        </div>
-        <div class="panel-actions">
-          <a class="btn btn-primary" href="https://zyrelo.ai">zyrelo.ai <span aria-hidden="true">→</span></a>
-          <a class="btn btn-ghost" href="https://zyrelo.ai/check/"><span>Kostenloser KI-Sichtbarkeits-Check<br><small>Werden Sie von ChatGPT und Perplexity genannt?</small></span><span aria-hidden="true">→</span></a>
-        </div>
       </div>
     </div>
   </section>
 
   <section id="beobachtungen">
     <div class="wrap">
-      <div class="sec-head"><span class="sec-num">02</span><h2>Was ich immer wieder <em>sehe</em></h2></div>
+      <div class="sec-head"><span class="sec-num">03</span><h2>Was ich immer wieder <em>sehe</em></h2></div>
       <p class="intro-note">Hier teile ich persönliche Gedanken und Beobachtungen.</p>
       <div class="obs">
-        <article>
-          <span class="n">01</span>
-          <h3>Was wird bei Veränderungen in Betrieben am häufigsten unterschätzt?</h3>
+        <details open>
+          <summary><span class="n">01</span><span>Was wird bei Veränderungen in Betrieben am häufigsten unterschätzt?</span></summary>
           <p><b>Der Schritt davor.</b> Nicht die Veränderung selbst, sondern das Verständnis dessen, was eigentlich gerade läuft. Meist liegt es nicht an fehlendem Willen oder falschen Tools. Es fehlt ein gemeinsames Bild davon, wie der Alltag wirklich funktioniert, bevor man ihn verändert.</p>
-        </article>
-        <article>
-          <span class="n">02</span>
-          <h3>Was verändert KI tatsächlich, und was nicht?</h3>
+        </details>
+        <details>
+          <summary><span class="n">02</span><span>Was verändert KI tatsächlich, und was nicht?</span></summary>
           <p>Interessant wird es dort, wo KI auf klare Abläufe trifft. Dann kann sie wirklich beschleunigen. Wo Unklarheit herrscht, macht sie diese sichtbarer, nicht kleiner. <b>Was sich nicht verändert:</b> die Notwendigkeit zu verstehen, warum etwas so läuft, wie es läuft.</p>
-        </article>
-        <article>
-          <span class="n">03</span>
-          <h3>Wie näherst du dich komplexen Situationen?</h3>
+        </details>
+        <details>
+          <summary><span class="n">03</span><span>Wie näherst du dich komplexen Situationen?</span></summary>
           <p>Ich fange mit dem an, was ich beobachte, nicht mit dem, was erklärt wird. Beides ist wertvoll, aber es ist selten dasselbe. <b>Komplexität löst sich oft nicht durch mehr Analyse,</b> sondern durch das richtige Bild der Realität.</p>
-        </article>
-        <article>
-          <span class="n">04</span>
-          <h3>Wo scheitern Prozesse in der Praxis am häufigsten?</h3>
+        </details>
+        <details>
+          <summary><span class="n">04</span><span>Wo scheitern Prozesse in der Praxis am häufigsten?</span></summary>
           <p>Meist nicht dort, wo man sucht. Auf dem Papier stimmt vieles: Verantwortlichkeiten, Systeme, Abläufe. Im Betrieb laufen dieselben Dinge dann trotzdem anders. <b>Der Abstand zwischen geplantem und gelebtem Prozess</b> ist fast immer größer als gedacht.</p>
-        </article>
+        </details>
       </div>
       <p class="nudge">Wenn du gerade an einem Punkt bist, an dem Prozesse nicht mehr sauber greifen: <a href="#kontakt">Ich tausche mich gern aus.</a></p>
     </div>
@@ -271,7 +171,7 @@ footer a:hover{color:var(--ink)}
 
   <section id="kontakt">
     <div class="wrap">
-      <div class="sec-head"><span class="sec-num">03</span><h2>Direkt &amp; <em>unkompliziert.</em></h2></div>
+      <div class="sec-head"><span class="sec-num">04</span><h2>Direkt &amp; <em>unkompliziert.</em></h2></div>
       <div class="contact-grid">
         <a class="c" href="https://wa.me/4915679172268"><span>WhatsApp</span><b>+49 15679 172268</b></a>
         <a class="c" href="tel:+4915679172268"><span>Telefon</span><b>+49 15679 172268</b></a>
@@ -289,7 +189,7 @@ footer a:hover{color:var(--ink)}
 <footer>
   <div class="wrap">
     <span>© <span id="y">2026</span> Björn Zeinert</span>
-    <span><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></span>
+    <span><a href="https://zyrelo.ai">ZYRELO</a><a href="https://suralo.app">Suralo</a><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></span>
   </div>
 </footer>
 

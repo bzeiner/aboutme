@@ -1,189 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Impressum · Björn Zeinert</title>
-<link rel="stylesheet" href="/fonts/fonts.css">
-<style>
-  :root {
-    --ink:   #06111F;
-    --gold:  #C9A84C;
-    --cream: #F5F0E8;
-    --mist:  rgba(245,240,232,0.6);
-    --fog:   rgba(245,240,232,0.3);
-  }
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-
-  body {
-    background: var(--ink);
-    color: var(--cream);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    min-height: 100vh;
-  }
-
-  body::after {
-    content:'';
-    position:fixed; inset:0; z-index:100;
-    pointer-events:none; opacity:0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size:180px 180px;
-  }
-
-  .ambient {
-    position:fixed; inset:0; z-index:0; pointer-events:none;
-    background: radial-gradient(ellipse 80% 60% at 15% 10%, rgba(27,58,92,0.5) 0%, transparent 60%);
-  }
-
-  .wrap {
-    position:relative; z-index:1;
-    max-width:620px; margin:0 auto;
-    padding: 72px 36px 80px;
-  }
-
-  .back {
-    display:inline-flex; align-items:center; gap:8px;
-    text-decoration:none; color:var(--fog);
-    font-size:11px; letter-spacing:0.16em;
-    text-transform:uppercase; margin-bottom:52px;
-    transition:color 0.2s;
-  }
-
-  .back:hover { color:var(--gold); }
-  .back svg { width:14px; height:14px; }
-
-  .page-title {
-    font-family:'Fraunces', serif;
-    font-weight:900;
-    font-size:clamp(40px, 9vw, 64px);
-    letter-spacing:-0.035em; line-height:0.92;
-    color:var(--cream); margin-bottom:52px;
-  }
-
-  .page-title .outline {
-    color:transparent;
-    -webkit-text-stroke:1.5px var(--gold);
-  }
-
-  .block {
-    border-top:1px solid rgba(245,240,232,0.06);
-    padding:28px 0;
-  }
-
-  .block:last-of-type {
-    border-bottom:1px solid rgba(245,240,232,0.06);
-  }
-
-  .block-label {
-    font-size:10px; font-weight:400;
-    letter-spacing:0.2em; text-transform:uppercase;
-    color:var(--gold); margin-bottom:14px;
-    display:flex; align-items:center; gap:10px;
-  }
-
-  .block-label::before {
-    content:''; display:block;
-    width:16px; height:1px;
-    background:var(--gold); opacity:0.5; flex-shrink:0;
-  }
-
-  .block-content {
-    font-size:15px; font-weight:300;
-    color:var(--mist); line-height:1.85;
-  }
-
-  .block-content a {
-    color:var(--mist); text-decoration:none;
-    border-bottom:1px solid rgba(245,240,232,0.15);
-    transition:all 0.2s;
-  }
-
-  .block-content a:hover {
-    color:var(--gold);
-    border-color:rgba(201,168,76,0.4);
-  }
-
-  .block-note {
-    margin-top:12px;
-    font-size:13px; font-weight:300;
-    color:var(--fog); line-height:1.7;
-    font-style:italic;
-  }
-
-  .footer {
-    margin-top:52px; padding-top:24px;
-    border-top:1px solid rgba(245,240,232,0.04);
-    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;
-  }
-
-  .footer-left {
-    font-size:11px; font-weight:300;
-    color:rgba(245,240,232,0.16); letter-spacing:0.06em;
-  }
-
-  .footer-right { display:flex; gap:18px; }
-
-  .footer-right a {
-    font-size:11px; font-weight:300;
-    color:rgba(245,240,232,0.2);
-    text-decoration:none; letter-spacing:0.04em;
-    transition:color 0.18s;
-  }
-
-  .footer-right a:hover { color:var(--gold); }
-</style>
+<meta name="description" content="Impressum von Björn Zeinert, Bad Liebenzell.">
+<link rel="canonical" href="https://about.bjoernzeinert.de/impressum.html">
+<meta name="theme-color" content="#F5F2EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0A1628" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/legal.css">
 </head>
 <body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
-<div class="ambient"></div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">Björn Zeinert</a>
+    <nav aria-label="Hauptnavigation">
+      <a href="/#projekte">Projekte</a>
+      <a class="hide-sm" href="/#ueber">Über mich</a>
+      <a class="hide-sm" href="/#beobachtungen">Beobachtungen</a>
+      <a href="/#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
 
-<div class="wrap">
+<main id="inhalt">
+  <div class="wrap legal">
+    <h1>Impressum</h1>
 
-  <a href="/" class="back">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="19" y1="12" x2="5" y2="12"/>
-      <polyline points="12 19 5 12 12 5"/>
-    </svg>
-    Zurück
-  </a>
-
-  <h1 class="page-title">Impres<span class="outline">sum</span></h1>
-
-  <div class="block">
-    <div class="block-label">Angaben gemäß § 5 TMG</div>
-    <div class="block-content">
-      Björn Zeinert<br>
+    <section>
+      <h2>Angaben gemäß § 5 DDG</h2>
+      <p>Björn Zeinert<br>
+      handelnd unter der Geschäftsbezeichnung ZYRELO<br>
+      Am Hährenwald 45<br>
       75378 Bad Liebenzell<br>
-      Baden-Württemberg
-    </div>
-    <div class="block-note">Private, nicht-kommerzielle Website.</div>
-  </div>
+      Baden-Württemberg</p>
+    </section>
 
-  <div class="block">
-    <div class="block-label">Kontakt</div>
-    <div class="block-content">
-      Telefon: +49 (0) 157 566 47548<br>
-      E-Mail: <a href="mailto:mail@bjoernzeinert.de">mail@bjoernzeinert.de</a>
-    </div>
-  </div>
+    <section>
+      <h2>Kontakt</h2>
+      <p>Telefon: +49 15679 172268<br>
+      E-Mail: <a href="mailto:mail@bjoernzeinert.de">mail@bjoernzeinert.de</a></p>
+    </section>
 
-  <div class="block">
-    <div class="block-label">Haftung für Inhalte</div>
-    <div class="block-content">
-      Als Betreiber dieser Seite bin ich für eigene Inhalte nach den allgemeinen Gesetzen verantwortlich. Eine Verpflichtung zur Überwachung fremder Informationen besteht nicht. Bei Bekanntwerden von Rechtsverletzungen werden entsprechende Inhalte umgehend entfernt.
-    </div>
-  </div>
+    <section>
+      <h2>Umsatzsteuer-ID</h2>
+      <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: DE462919081</p>
+    </section>
 
-  <div class="footer">
-    <div class="footer-left">75378 Bad Liebenzell · Baden-Württemberg</div>
-    <div class="footer-right">
-      <a href="/datenschutz">Datenschutz</a>
-    </div>
-  </div>
+    <section>
+      <h2>Verbraucherstreitbeilegung</h2>
+      <p>Ich bin nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+    </section>
 
-</div>
+    <section>
+      <h2>Haftung für Inhalte</h2>
+      <p>Als Betreiber dieser Seite bin ich für eigene Inhalte nach den allgemeinen Gesetzen verantwortlich. Eine Verpflichtung zur Überwachung fremder Informationen besteht nicht. Bei Bekanntwerden von Rechtsverletzungen werden entsprechende Inhalte umgehend entfernt.</p>
+    </section>
+
+    <section>
+      <h2>Haftung für Links</h2>
+      <p>Diese Seite verlinkt auf externe Websites, darunter zyrelo.ai, suralo.app und LinkedIn. Auf deren Inhalte habe ich keinen Einfluss und übernehme dafür keine Gewähr. Für die Inhalte verlinkter Seiten ist stets der jeweilige Betreiber verantwortlich. Bei Bekanntwerden von Rechtsverletzungen entferne ich den Link umgehend.</p>
+    </section>
+
+    <section>
+      <h2>Urheberrecht</h2>
+      <p>Die von mir erstellten Inhalte und Werke auf dieser Seite unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung und Verbreitung bedürfen der schriftlichen Zustimmung, soweit das Gesetz nichts anderes erlaubt.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="y">2026</span> Björn Zeinert</span>
+    <span><a href="https://zyrelo.ai">ZYRELO</a><a href="https://suralo.app">Suralo</a><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

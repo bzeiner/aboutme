@@ -1,0 +1,14 @@
+/* Rechtsseiten (Impressum, Datenschutz) */
+.legal{max-width:720px;padding-top:72px;padding-bottom:88px}
+.legal h1{font-size:clamp(34px,5vw,52px);margin:0 0 40px}
+.legal section{padding:28px 0;border-top:1px solid var(--linie)}
+.legal section:last-of-type{border-bottom:1px solid var(--linie)}
+.legal h2{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-text);margin:0 0 14px}
+.legal p{margin:0;color:var(--tinte-2);font-size:16px;line-height:1.8}
+.legal p+p{margin-top:14px}
+.legal a{color:var(--tinte);text-underline-offset:3px;text-decoration-color:var(--linie)}
+.legal a:hover{color:var(--gold-text);text-decoration-color:var(--gold-text)}
+.legal .note{font-size:14px;color:var(--tinte-3)}
+.legal .caps{font-size:14px;color:var(--tinte-3);line-height:1.75}
+.legal .source{margin-top:32px;font-size:13px;color:var(--tinte-3)}
+@media (max-width:560px){.legal{padding-top:48px}}

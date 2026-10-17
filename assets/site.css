@@ -1,0 +1,62 @@
+/* Gemeinsame Basis für alle Seiten von about.bjoernzeinert.de. ZYRELO Design Tokens 1.5.1 (playbook/brand/tokens/colors.css). */
+@font-face{font-family:Inter;src:url(/fonts/inter-latin-var.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Geist Mono";src:url(/fonts/geist-mono-latin-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Geist Mono";src:url(/fonts/geist-mono-latin-500.woff2) format("woff2");font-weight:500 600;font-display:swap}
+:root{
+  /* ZYRELO Design Tokens 1.5.1 (playbook/brand/tokens/colors.css), heller Modus */
+  --navy:#0F1E35; --navy-hell:#162844; --gold:#C5A24A; --gold-dunkel:#6E5B29; --gold-hover:#D4B36A; --creme:#F5F2EC; --creme-alt:#EEE3CF;
+  --grund:#F5F2EC; --karte:#FBF9F5; --linie:#E2D9C8; --tinte:#0F1E35; --tinte-2:#4D5560; --tinte-3:#736E62; --gold-text:#6E5B29;
+  --nacht:#0F1E35; --nacht-linie:rgba(197,162,74,.2); --hell:#F5F2EC; --hell-2:rgba(245,242,236,.72);
+  --text:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Geist Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --radius:0; --wrap:1080px;
+}
+@media (prefers-color-scheme: dark){
+  :root{--grund:#0A1628; --karte:#102037; --linie:#22344F; --tinte:#F5F2EC; --tinte-2:#BDB7AA; --tinte-3:#8F897C; --gold-text:#D4B36A; --nacht:#08121F}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--grund);color:var(--tinte);font:17px/1.65 var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;background:var(--tinte);color:var(--grund);padding:8px 12px;z-index:10}
+:focus-visible{outline:2px solid var(--gold-text);outline-offset:3px}
+
+/* Header */
+header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--grund) 90%,transparent);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--linie)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-weight:600;font-size:17px;text-decoration:none;letter-spacing:-.01em}
+nav a{font-size:15px;color:var(--tinte-2);text-decoration:none;margin-left:22px}
+nav a:hover{color:var(--tinte)}
+
+/* Sections */
+section{padding:72px 0;border-top:1px solid var(--linie)}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:36px}
+.sec-num{font-family:var(--mono);color:var(--gold-text);font-size:14px;font-weight:500}
+h2{font-weight:700;font-size:clamp(28px,3.6vw,40px);line-height:1.15;margin:0;letter-spacing:-.025em}
+h2 em{font-style:normal;color:var(--gold-text)}
+
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 20px;text-decoration:none;font-weight:600;font-size:16px;transition:background .15s ease,transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn small{font-weight:400;opacity:.8;font-size:13px}
+.btn-ghost{border:1px solid color-mix(in srgb,var(--hell) 28%,transparent);color:var(--hell)}
+
+
+/* Footer */
+footer{border-top:1px solid var(--linie);padding:28px 0 40px;font-size:14px;color:var(--tinte-2)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{color:var(--tinte-2);text-decoration:none;margin-left:18px}
+footer a:first-child{margin-left:0}
+footer a:hover{color:var(--tinte)}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  nav a{margin-left:14px;font-size:14px}
+  nav a.hide-sm{display:none}
+  section{padding:56px 0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
