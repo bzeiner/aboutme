@@ -44,6 +44,7 @@
   ]
 }
 </script>
+<script>document.documentElement.classList.add("js")</script>
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/home.css">
 </head>
@@ -54,38 +55,58 @@
   <div class="wrap">
     <a class="brand" href="/">Björn Zeinert</a>
     <nav aria-label="Hauptnavigation">
-      <a href="/#projekte">Projekte</a>
+      <a class="hide-sm" href="/#projekte">Projekte</a>
       <a class="hide-sm" href="/#ueber">Über mich</a>
       <a class="hide-sm" href="/#beobachtungen">Beobachtungen</a>
-      <a href="/#kontakt">Kontakt</a>
+      <a class="hide-sm" href="/#kontakt">Kontakt</a>
+      <a class="nav-cta" href="https://zyrelo.ai/check/?utm_source=about&amp;utm_medium=landing&amp;utm_content=header">Kostenloser Check</a>
     </nav>
   </div>
 </header>
 
 <main id="inhalt">
-  <div class="wrap hero" id="top">
-    <div class="hero-grid">
-      <div>
-        <p class="eyebrow">Inhaber ZYRELO · Gründer Suralo</p>
-        <h1>Björn Zeinert</h1>
-        <p class="claim"><span>Prozesse.</span> <span>Menschen.</span> <span>Technologie.</span></p>
-        <p class="quote">Die meisten Probleme sind keine technischen. Sie zeigen sich nur dort.</p>
-        <div class="hero-cta">
-          <a class="btn btn-solid" href="https://zyrelo.ai">Für Unternehmen: ZYRELO <span aria-hidden="true">→</span></a>
-          <a class="btn btn-line" href="https://suralo.app">Für Triathleten: Suralo <span aria-hidden="true">→</span></a>
+  <div class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow rv">Björn Zeinert · Inhaber ZYRELO · Gründer Suralo</p>
+        <h1 class="rv">Wird Ihr Betrieb von der KI <em>genannt</em>?</h1>
+        <p class="lede rv">Fragt ein Kunde ChatGPT, Perplexity oder Gemini nach einem Anbieter wie Ihnen, entscheidet die Antwort mit. ZYRELO misst, ob Sie vorkommen, und leitet daraus konkrete Maßnahmen ab.</p>
+        <div class="cta-row rv">
+          <a class="btn btn-gold" href="https://zyrelo.ai/check/?utm_source=about&amp;utm_medium=landing&amp;utm_content=hero"><span>Kostenlosen KI-Sichtbarkeits-Check starten</span><span class="arr" aria-hidden="true">→</span></a>
+          <a class="link-quiet" href="#suralo">Oder: Suralo, der Triathlon-Plan <span aria-hidden="true">↓</span></a>
         </div>
+        <p class="micro rv">Kostenlos und ohne Verpflichtung.</p>
       </div>
-      <figure class="portrait">
-        <img src="portrait.jpg" alt="Björn Zeinert" width="340" height="425" onerror="this.parentElement.style.display='none'">
-      </figure>
+      <div class="visual rv">
+        <figure class="portrait">
+          <img src="portrait.jpg" alt="Björn Zeinert" width="600" height="750" fetchpriority="high">
+          <figcaption>Björn Zeinert<br><span>Bad Liebenzell</span></figcaption>
+        </figure>
+        <figure class="float-card">
+          <img src="img/zyrelo-messkarte-beispiel-dunkel-500.webp" srcset="img/zyrelo-messkarte-beispiel-dunkel-500.webp 500w, img/zyrelo-messkarte-beispiel-dunkel-1000.webp 1000w" sizes="(min-width:900px) 320px, 80vw" width="1000" height="940" alt="Beispiel-Messung Muster Fertigung GmbH: ChatGPT 0/10, Perplexity 3/10, Gemini 0/10; Beispiel, fiktive Firmen">
+          <figcaption>Beispiel mit fiktiven Firmen</figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 
-  <section id="projekte">
+  <section id="vorgehen">
     <div class="wrap">
-      <div class="sec-head"><span class="sec-num">01</span><h2>Woran ich <em>arbeite</em></h2></div>
+      <div class="sec-head rv"><span class="sec-num">01</span><h2>So geht ZYRELO <em>vor</em></h2></div>
+      <div class="steps">
+        <article class="step rv"><span class="n">01</span><h3>Messen</h3><p>Wiederholte Abfragen in ChatGPT, Perplexity und Gemini. Eine einzelne Antwort beweist nichts.</p></article>
+        <article class="step rv"><span class="n">02</span><h3>Verstehen</h3><p>Warum werden andere genannt, und welche Angaben über Sie stimmen nicht?</p></article>
+        <article class="step rv"><span class="n">03</span><h3>Verbessern</h3><p>Konkrete Maßnahmen an Inhalten und Prozessen, auf Wunsch auch die Umsetzung.</p></article>
+        <article class="step rv"><span class="n">04</span><h3>Nachmessen</h3><p>Ein zweiter Messtermin zeigt, was die Maßnahmen verändert haben.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projekte" class="band">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="sec-num">02</span><h2>Woran ich <em>arbeite</em></h2></div>
       <div class="projects">
-        <article class="project project-zyrelo">
+        <article class="project project-zyrelo rv">
           <div class="p-head">
             <img class="logo" src="img/zyrelo-lockup-gold-dunkelgrund.svg" alt="ZYRELO" width="141" height="28">
             <p class="eyebrow">Beruflich · ZYRELO</p>
@@ -100,11 +121,11 @@
             <figcaption>Beispiel mit fiktiven Firmen, kein Kundenergebnis.</figcaption>
           </figure>
           <div class="btns">
-            <a class="btn btn-primary" href="https://zyrelo.ai/check/"><span>Kostenloser KI-Sichtbarkeits-Check<br><small>Werden Sie von ChatGPT und Perplexity genannt?</small></span><span aria-hidden="true">→</span></a>
-            <a class="btn btn-ghost" href="https://zyrelo.ai">zyrelo.ai <span aria-hidden="true">→</span></a>
+            <a class="btn btn-primary" href="https://zyrelo.ai/check/?utm_source=about&amp;utm_medium=landing&amp;utm_content=projektkarte"><span>Kostenloser KI-Sichtbarkeits-Check<br><small>Werden Sie von ChatGPT und Perplexity genannt?</small></span><span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="https://zyrelo.ai/?utm_source=about&amp;utm_medium=landing&amp;utm_content=projektkarte">zyrelo.ai <span aria-hidden="true">→</span></a>
           </div>
         </article>
-        <article class="project project-suralo">
+        <article class="project project-suralo rv" id="suralo">
           <div class="p-head">
             <img class="logo" src="img/suralo-logo-dunkel.svg" alt="Suralo" width="113" height="28">
             <p class="eyebrow">Eigenes Projekt · Suralo</p>
@@ -129,16 +150,15 @@
 
   <section id="ueber">
     <div class="wrap">
-      <div class="sec-head"><span class="sec-num">02</span><h2>Über <em>mich</em></h2></div>
+      <div class="sec-head rv"><span class="sec-num">03</span><h2>Über <em>mich</em></h2></div>
       <div class="about">
-        <div>
+        <div class="about-text rv">
           <p class="lead">Technologie ist kein Ersatz für Klarheit. Sie verstärkt, was da ist: gute Prozesse genauso wie schlechte.</p>
           <p>Genau das sehe ich immer wieder im Alltag vieler Betriebe, oft dort, wo es eigentlich längst laufen sollte. Mich interessiert vor allem, warum Dinge im Alltag anders laufen als gedacht, selbst wenn Systeme und Konzepte eigentlich stimmen.</p>
           <p>Mein Einstieg war an der Werkzeugmaschine. Später kamen berufsbegleitend Maschinenbau und Wirtschaftsingenieurwesen dazu. So ist aus praktischer Erfahrung ein klarer Fokus entstanden: Prozesse so zu verstehen, wie sie wirklich gelebt werden, nicht nur, wie sie geplant sind.</p>
-          <p>Heute verbinde ich genau diese Perspektiven: Praxis, Technik und Struktur, mit dem Blick darauf, was im Betrieb tatsächlich trägt.</p>
           <p>KI sehe ich dabei nicht als Selbstzweck, sondern als Hebel. Sie macht sichtbar, was vorher schon da war. Nur schneller.</p>
         </div>
-        <aside class="facts" aria-label="Kurzprofil">
+        <aside class="facts rv" aria-label="Kurzprofil">
           <h3>Werdegang</h3>
           <ul class="path">
             <li>Werkzeugmaschine</li>
@@ -156,9 +176,9 @@
 
   <section id="beobachtungen">
     <div class="wrap">
-      <div class="sec-head"><span class="sec-num">03</span><h2>Was ich immer wieder <em>sehe</em></h2></div>
-      <p class="intro-note">Hier teile ich persönliche Gedanken und Beobachtungen.</p>
-      <div class="obs">
+      <div class="sec-head rv"><span class="sec-num">04</span><h2>Was ich immer wieder <em>sehe</em></h2></div>
+      <p class="intro-note rv">Hier teile ich persönliche Gedanken und Beobachtungen.</p>
+      <div class="obs rv">
         <details open>
           <summary><span class="n">01</span><span>Was wird bei Veränderungen in Betrieben am häufigsten unterschätzt?</span></summary>
           <p><b>Der Schritt davor.</b> Nicht die Veränderung selbst, sondern das Verständnis dessen, was eigentlich gerade läuft. Meist liegt es nicht an fehlendem Willen oder falschen Tools. Es fehlt ein gemeinsames Bild davon, wie der Alltag wirklich funktioniert, bevor man ihn verändert.</p>
@@ -176,13 +196,13 @@
           <p>Meist nicht dort, wo man sucht. Auf dem Papier stimmt vieles: Verantwortlichkeiten, Systeme, Abläufe. Im Betrieb laufen dieselben Dinge dann trotzdem anders. <b>Der Abstand zwischen geplantem und gelebtem Prozess</b> ist fast immer größer als gedacht.</p>
         </details>
       </div>
-      <p class="nudge">Wenn du gerade an einem Punkt bist, an dem Prozesse nicht mehr sauber greifen: <a href="#kontakt">Ich tausche mich gern aus.</a></p>
+      <p class="nudge rv">Wenn du gerade an einem Punkt bist, an dem Prozesse nicht mehr sauber greifen: <a href="#kontakt">Ich tausche mich gern aus.</a></p>
     </div>
   </section>
 
   <section id="kontakt">
     <div class="wrap">
-      <div class="sec-head"><span class="sec-num">04</span><h2>Direkt &amp; <em>unkompliziert.</em></h2></div>
+      <div class="sec-head rv"><span class="sec-num">05</span><h2>Direkt &amp; <em>unkompliziert.</em></h2></div>
       <div class="contact-grid">
         <a class="c" href="https://wa.me/4915679172268"><span>WhatsApp</span><b>+49 15679 172268</b></a>
         <a class="c" href="tel:+4915679172268"><span>Telefon</span><b>+49 15679 172268</b></a>
@@ -192,6 +212,10 @@
       <div class="contact-foot">
         <span>75378 Bad Liebenzell · Baden-Württemberg</span>
         <button class="vcard" type="button" id="vcard">Kontakt speichern</button>
+      </div>
+      <div class="end-cta rv">
+        <p>Sie wollen wissen, wo Ihr Unternehmen in KI-Antworten steht?</p>
+        <a class="btn btn-solid" href="https://zyrelo.ai/check/?utm_source=about&amp;utm_medium=landing&amp;utm_content=ende"><span>Kostenlosen Check starten</span><span class="arr" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -222,6 +246,16 @@ document.getElementById('vcard').addEventListener('click', function () {
   a.download = 'bjoern-zeinert.vcf';
   document.body.appendChild(a); a.click(); a.remove();
 });
+</script>
+<script>
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+  },{rootMargin:'0px 0px -8% 0px',threshold:0.08});
+  els.forEach(function(e,i){ e.style.transitionDelay=((i%4)*70)+'ms'; io.observe(e); });
+})();
 </script>
 </body>
 </html>
