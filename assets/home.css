@@ -32,8 +32,8 @@ html.js .rv.in{opacity:1;transform:none}
 .portrait{position:relative;margin:0}
 .portrait::before{content:"";position:absolute;inset:0;border:1px solid rgba(197,162,74,.55);transform:translate(16px,16px);z-index:-1}
 .portrait img{display:block;width:100%;aspect-ratio:1/1.05;object-fit:cover;filter:saturate(.85) contrast(1.04)}
-.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,18,31,.75));pointer-events:none}
-.portrait figcaption{position:absolute;left:18px;top:auto;bottom:16px;z-index:1;font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:var(--hell);line-height:1.5}
+.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,transparent 60%,rgba(8,18,31,.8));pointer-events:none}
+.portrait figcaption{position:absolute;left:18px;top:16px;bottom:auto;z-index:1;font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:var(--hell);line-height:1.5}
 .portrait figcaption span{color:#C5A24A;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
 .float-card{position:absolute;right:-12%;bottom:0;width:72%;margin:0;animation:float 7s ease-in-out infinite}
 .float-card img{display:block;width:100%;height:auto;border:1px solid rgba(197,162,74,.3);box-shadow:0 34px 70px -22px rgba(0,0,0,.75)}
@@ -109,7 +109,7 @@ section{padding:96px 0}
 .nudge a{color:var(--gold-text);text-underline-offset:4px}
 
 /* Kontakt */
-.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .c{display:block;padding:20px;border:1px solid var(--linie);text-decoration:none;background:var(--karte);transition:border-color .15s ease,transform .15s ease}
 .c:hover{border-color:var(--gold-text);transform:translateY(-2px)}
 .c span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--tinte-3);margin-bottom:6px}
