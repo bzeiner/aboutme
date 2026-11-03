@@ -150,3 +150,7 @@ section{padding:96px 0}
   .projects{grid-template-rows:auto auto auto auto;row-gap:0}
   .project{display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:20px}
 }
+
+.hero .hero-copy h1 em.sur{color:#FF6A2C!important;-webkit-text-fill-color:#FF6A2C;background:none}
+.btn-sur{background:#FF6A2C;color:#0E0E10}
+.btn-sur:hover{background:#FF8149;box-shadow:0 18px 50px -14px rgba(255,106,44,.55)}
