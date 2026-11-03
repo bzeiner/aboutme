@@ -63,3 +63,6 @@ footer a:hover{color:var(--tinte)}
   section{padding:56px 0}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+nav a.nav-sur{background:#FF6A2C;color:#0E0E10}
+nav a.nav-sur:hover{background:#FF8149;color:#0E0E10}
